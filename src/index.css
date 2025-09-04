@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-nfp-yellow text-nfp-blue font-heading font-bold px-6 py-3 rounded-lg hover:bg-nfp-yellow/90 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-nfp-blue text-nfp-blue font-heading font-bold px-6 py-3 rounded-lg hover:bg-nfp-blue hover:text-white transition-colors;
+  }
+}

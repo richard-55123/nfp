@@ -3,24 +3,16 @@ import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi'
 
 const Footer = () => {
     return (
-        <footer className="bg-nfp-blue text-nfp-white">
+        <footer className="bg-gray-600 text-nfp-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-[6.5%] py-8 md:py-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="sm:col-span-2 lg:col-span-1"
-                    >
-                        <h3 className="text-lg sm:text-xl font-heading font-bold mb-3 md:mb-4">NOUVELLES FORCES POLITIQUES</h3>
-                        <p className="text-nfp-white/80 mb-4 text-sm md:text-base">
-                            Unis pour une vision commune de prospérité et de développement national.
-                        </p>
-                        <div className="flex space-x-4">
-                            {/* Social media icons would go here */}
-                        </div>
-                    </motion.div>
+                    <div className='flex flex-col'>
+                        <img
+                            src="/NFP.png"
+                            alt="NFP"
+                            className="w-auto object-contain relative z-10 drop-shadow-lg"
+                        />
+                    </div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -32,8 +24,8 @@ const Footer = () => {
                         <ul className="space-y-1 md:space-y-2">
                             {['Accueil', 'À propos', 'Partis', 'Activités', 'Contact'].map((item, index) => (
                                 <li key={index}>
-                                    <a 
-                                        href={`#${item.toLowerCase().replace(' ', '-').replace('à', 'a')}`} 
+                                    <a
+                                        href={`#${item.toLowerCase().replace(' ', '-').replace('à', 'a')}`}
                                         className="text-nfp-white/80 hover:text-nfp-yellow transition-colors text-sm md:text-base"
                                     >
                                         {item}
@@ -52,16 +44,16 @@ const Footer = () => {
                         <h4 className="text-base md:text-lg font-heading font-bold mb-3 md:mb-4">Partis Membres</h4>
                         <ul className="space-y-1 md:space-y-2">
                             <li>
-                                <a 
-                                    href="https://ang-nga.org/" 
+                                <a
+                                    href="https://ang-nga.org/"
                                     className="text-nfp-white/80 hover:text-nfp-yellow transition-colors text-sm md:text-base"
                                 >
                                     ANG (L'Alliance Nouvelle Génération)
                                 </a>
                             </li>
                             <li>
-                                <a 
-                                    href="https://ang-nga.org/" 
+                                <a
+                                    href="https://ang-nga.org/"
                                     className="text-nfp-white/80 hover:text-nfp-yellow transition-colors text-sm md:text-base"
                                 >
                                     PTN (Parti du Triangle National)

@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion'
-import {  HiStar, HiHeart, HiUsers } from 'react-icons/hi'
+import { useState } from 'react';
+import { HiStar, HiHeart, HiUsers } from 'react-icons/hi'
+import JoinModal from './JoinModal';
 
 const Hero = () => {
-   
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+
 
     return (
         <section id="home" className="relative bg-gradient-to-r from-nfp-blue to-nfp-blue/90 text-nfp-white min-h-screen flex items-center px-[6.5%]">
@@ -13,7 +18,7 @@ const Hero = () => {
             </div>
             {/* Éléments d'arrière-plan animés */}
             <div className="absolute inset-0 z-1 overflow-hidden ">
-                <motion.div 
+                <motion.div
                     className="absolute -top-20 -left-20 w-72 h-72 bg-nfp-yellow/20 rounded-full"
                     animate={{
                         scale: [1, 1.2, 1],
@@ -25,7 +30,7 @@ const Hero = () => {
                         ease: "easeInOut"
                     }}
                 />
-                <motion.div 
+                <motion.div
                     className="absolute bottom-10 right-10 w-64 h-64 bg-nfp-yellow/10 rounded-full"
                     animate={{
                         scale: [1, 1.1, 1],
@@ -38,7 +43,7 @@ const Hero = () => {
                         delay: 1
                     }}
                 />
-                <motion.div 
+                <motion.div
                     className="absolute top-1/2 left-1/4 w-40 h-40 bg-nfp-white/5 rounded-full"
                     animate={{
                         scale: [1, 1.3, 1],
@@ -89,7 +94,7 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
                         >
-                            La NOUVELLES FORCES POLITIQUES pour la <strong>prospérité</strong>, 
+                            La NOUVELLES FORCES POLITIQUES pour la <strong>prospérité</strong>,
                             l'<strong>unité nationale</strong> et le <strong>développement durable</strong>
                         </motion.p>
 
@@ -100,7 +105,8 @@ const Hero = () => {
                             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10 md:mb-16"
                         >
                             <motion.button
-                                whileHover={{ 
+                                onClick={() => setIsModalOpen(true)}
+                                whileHover={{
                                     scale: 1.05,
                                     boxShadow: "0 10px 25px -5px rgba(255, 203, 5, 0.4)"
                                 }}
@@ -112,7 +118,7 @@ const Hero = () => {
                             </motion.button>
 
                             <motion.button
-                                whileHover={{ 
+                                whileHover={{
                                     scale: 1.05,
                                     backgroundColor: "rgba(255, 255, 255, 0.15)"
                                 }}
@@ -124,7 +130,7 @@ const Hero = () => {
                             </motion.button>
                         </motion.div>
 
-                        
+
                     </motion.div>
 
                     <motion.div
@@ -153,9 +159,9 @@ const Hero = () => {
                                     />
                                 </div>
                             </div>
-                            
+
                             {/* Élément décoratif */}
-                            <motion.div 
+                            <motion.div
                                 className="absolute -top-4 -right-4 bg-nfp-yellow text-nfp-blue p-2 shadow-lg"
                                 animate={{
                                     rotate: [0, 10, 0, -10, 0],
@@ -185,7 +191,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            
+            <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     )
 }

@@ -1,185 +1,280 @@
-import { motion } from 'framer-motion'
-import { HiStar, HiUserGroup, HiArrowRight } from 'react-icons/hi'
+import { motion, AnimatePresence } from 'framer-motion'
+import { HiArrowRight, HiUserGroup, HiCalendar, HiHeart } from 'react-icons/hi'
+import { useState, useEffect } from 'react'
+import { parties } from '../data/parties'
 
 const Parties = () => {
-  const parties = [
-    {
-      name: "ANG (L'Alliance Nouvelle Génération)",
-      leader: "DR.NGAKETCHA",
-      leaderImage: "/ANG.jpg",
-      partyLogo: "/ANG.png",
-      ideology: "Centre-droit",
-      color: "#076633",
-      members: "",
-      website: "https://ang-nga.org/"
-    },
-    {
-      name: "PTN (Parti du Triangle National)",
-      leader: "DR.NGAKETCHA",
-      leaderImage: "/oneking.jpg",
-      partyLogo: "/ptn.png",
-      ideology: "Centre-gauche",
-      color: "red",
-      members: "",
-      website: "https://ang-nga.org/"
-    },
-  ]
 
-  const getColorClass = (color: string) => {
-    switch(color) {
-      case "#076633": return "bg-[#076633]"
-      case "red": return "bg-red-500"
-      case "green": return "bg-green-500"
-      case "yellow": return "bg-yellow-500"
-      case "purple": return "bg-purple-500"
-      case "orange": return "bg-orange-500"
-      default: return "bg-gray-500"
-    }
-  }
+    const [announcements] = useState([
+        {
+            id: 1,
+            title: "Grand rassemblement pour l'unité nationale",
+            date: "15 Octobre 2025",
+            type: "événement",
+            excerpt: "Rejoignez-nous pour une journée de discussions et de célébrations autour des valeurs qui nous unissent.",
+            image: "/NP.png"
+        },
+        {
+            id: 2,
+            title: "Nouveau programme économique",
+            date: "12 Octobre 2025",
+            type: "annonce",
+            excerpt: "Découvrez notre plan pour relancer l'économie et créer des emplois durables.",
+            image: "/NP.png"
+        },
+        {
+            id: 3,
+            title: "Consultation citoyenne nationale",
+            date: "20 Octobre 2025",
+            type: "consultation",
+            excerpt: "Participez à notre grande consultation nationale pour construire ensemble l'avenir du pays.",
+            image: "/NP.png"
+        },
+        {
+            id: 4,
+            title: "Lancement de la campagne jeunesse",
+            date: "5 Octobre 2025",
+            type: "campagne",
+            excerpt: "Une nouvelle initiative pour impliquer les jeunes dans la vie politique et sociale.",
+            image: "/NP.png"
+        }
+    ])
 
-  const getGradientClass = (color: string) => {
-    switch(color) {
-      case "blue": return "from-blue-400/10 to-blue-600/10"
-      case "red": return "from-red-400/10 to-red-600/10"
-      case "green": return "from-green-400/10 to-green-600/10"
-      case "yellow": return "from-yellow-400/10 to-yellow-600/10"
-      case "purple": return "from-purple-400/10 to-purple-600/10"
-      case "orange": return "from-orange-400/10 to-orange-600/10"
-      default: return "from-gray-400/10 to-gray-600/10"
-    }
-  }
+    const [currentAnnouncement, setCurrentAnnouncement] = useState(0)
 
-  return (
-    <section id="parties" className="py-12 md:py-20 bg-gradient-to-br from-nfp-blue/5 to-nfp-white relative overflow-hidden">
-      {/* Image de fond avec opacité réduite */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-        style={{ backgroundImage: "url('/NFP.png')" }}
-      ></div>
-      
-      {/* Éléments décoratifs arrière-plan */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-nfp-yellow/10 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-nfp-blue/10 blur-3xl"></div>
-      </div>
-      
-      <div className="container mx-auto px-[6.5%] relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-nfp-blue mb-4">
-            Partis Membres
-          </h2>
-          <div className="w-20 h-1 bg-nfp-yellow mx-auto mb-4 md:mb-6"></div>
-          <p className="text-base md:text-lg text-nfp-black/80 max-w-3xl mx-auto">
-            Découvrez les partis politiques qui composent notre alliance et œuvrent ensemble 
-            pour l'avenir du Cameroun.
-          </p>
-        </motion.div>
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentAnnouncement((prev) => (prev + 1) % announcements.length)
+        }, 5000)
+        return () => clearInterval(interval)
+    }, [announcements.length])
 
-        <div className="space-y-8 md:space-y-12">
-          {parties.map((party, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-0 bg-white  shadow-soft hover:shadow-bold transition-all overflow-hidden`}
-            >
-              {/* Section visuelle avec image et logo */}
-              <div className={`lg:w-2/5 relative overflow-hidden min-h-64 md:min-h-80 ${getColorClass(party.color)}/10 bg-gradient-to-br ${getGradientClass(party.color)}`}>
-                <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
-                  <div className="relative w-full h-48 md:h-64">
-                    <motion.img 
-                      src={party.leaderImage} 
-                      alt={`Portrait de ${party.leader}`}
-                      className="w-full h-full object-cover rounded-md"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.4 }}
-                    />
-                    <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-24 h-24 md:w-32 md:h-32  p-2">
-                      <img 
-                        src={party.partyLogo} 
-                        alt={`Logo ${party.name}`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Section contenu */}
-              <div className="lg:w-3/5 p-6 md:p-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between mb-4 md:mb-6">
-                    <h3 className="text-xl md:text-2xl font-heading font-bold text-nfp-blue">
-                      {party.name}
-                    </h3>
-                    <HiStar className="text-nfp-yellow text-xl md:text-2xl" />
-                  </div>
-                  
-                  <div className="mb-4 md:mb-6">
-                    <div className="flex items-center mb-3 md:mb-4">
-                      <div className={`w-3 h-6 md:h-8 ${getColorClass(party.color)} mr-3`}></div>
-                      <p className="text-lg md:text-xl font-semibold text-nfp-black">{party.leader}</p>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
-                      <div>
-                        <p className="text-nfp-black/70 text-xs md:text-sm uppercase tracking-wide mb-1">Idéologie</p>
-                        <p className="font-medium text-sm md:text-base">{party.ideology}</p>
-                      </div>
-                      <div>
-                        <p className="text-nfp-black/70 text-xs md:text-sm uppercase tracking-wide mb-1">Membres</p>
-                        <div className="flex items-center">
-                          <HiUserGroup className="mr-2 text-nfp-blue text-sm md:text-base" />
-                          <span className="font-semibold text-sm md:text-base">{party.members}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <motion.a
-                  href={party.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center text-nfp-blue font-medium group self-start mt-4 text-sm md:text-base"
+    return (
+        <section id="parties" className="py-20 bg-gradient-to-br from-nfp-blue/5 to-nfp-white relative overflow-hidden">
+            {/* Image de fond ajoutée ici */}
+            <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+                style={{ backgroundImage: "url('/NFP.png')" }}
+            ></div>
+            
+            {/* Éléments décoratifs géométriques */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-0 left-0 w-64 h-64 border-t-4 border-l-4 border-nfp-yellow/20"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 border-b-4 border-r-4 border-nfp-blue/20"></div>
+            </div>
+
+            <div className="container mx-auto px-[6.5%] relative z-10">
+
+                <motion.div
+                    initial={{ scale: 0.9 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="mb-6"
                 >
-                  En savoir plus
-                  <HiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </motion.a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                    <div className="w-20 h-1 bg-nfp-yellow mb-4"></div>
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold text-nfp-blue mb-4 md:mb-6 leading-tight">
+                        Partis Membres <span className="text-nfp-yellow">Membres</span><br /> Pour Le Cameroun
+                    </h2>
+                </motion.div>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-lg md:text-xl text-nfp-black/90 leading-relaxed mb-6 md:mb-8"
+                >
+                    <strong className="font-semibold text-nfp-blue">Découvrez</strong> les partis politiques qui composent notre alliance et œuvrent ensemble
+                    pour l'avenir du Cameroun.
+                </motion.p>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-12 md:mt-16"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: "#1E40AF" }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-nfp-blue text-white font-heading font-bold px-6 py-3 md:px-8 md:py-4 shadow-soft hover:shadow-bold transition-all flex items-center mx-auto text-sm md:text-base"
-          >
-            Voir tous les partis membres
-            <HiArrowRight className="ml-2" />
-          </motion.button>
-        </motion.div>
-      </div>
-    </section>
-  )
+
+                <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Section des partis - Gauche */}
+                    <div className="lg:w-2/3 space-y-2">
+                        {parties.map((party, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.7, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="bg-white/80 hover:bg-gray-50/80 transition-all duration-300 border-b border-gray-200 last:border-b-0 backdrop-blur-sm"
+                            >
+                                <div className="py-8">
+                                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                                        {/* Logo et couleur identitaire */}
+                                        <div className="flex-shrink-0 flex items-start">
+                                            <div className="relative">
+                                                <div
+                                                    className="w-16 h-16 md:w-20 md:h-20 bg-gray-100 p-2 flex items-center justify-center"
+                                                    style={{ boxShadow: `0 4px 14px 0 ${party.color}40` }}
+                                                >
+                                                    <img
+                                                        src={party.partyLogo}
+                                                        alt={`Logo ${party.name}`}
+                                                        className="w-full h-full object-contain"
+                                                    />
+                                                </div>
+                                                <div
+                                                    className="absolute -bottom-2 -right-2 w-6 h-6"
+                                                    style={{ backgroundColor: party.color }}
+                                                ></div>
+                                            </div>
+                                        </div>
+
+                                        {/* Informations du parti */}
+                                        <div className="flex-grow">
+                                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+                                                <h3 className="text-xl md:text-2xl font-bold text-nfp-blue">
+                                                    {party.name}
+                                                </h3>
+
+                                                <div className="flex items-center gap-3">
+                                                    <span className="px-3 py-1 text-xs font-semibold bg-gray-100 text-nfp-blue">
+                                                        {party.ideology}
+                                                    </span>
+                                                    <div className="flex items-center text-sm text-gray-500">
+                                                        <HiUserGroup className="mr-1" />
+                                                        <span>{party.members} membres</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <p className="text-nfp-black/70 mb-4">
+                                                {party.description}
+                                            </p>
+
+                                            <div className="flex items-center justify-between">
+                                                <div className="flex items-center">
+                                                    <div className="w-8 h-8 bg-gray-200 mr-3">
+                                                        <img
+                                                            src={party.leaderImage}
+                                                            alt={`Portrait de ${party.leader}`}
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    </div>
+                                                    <span className="text-sm font-medium text-nfp-blue">{party.leader}</span>
+                                                </div>
+
+                                                <motion.a
+                                                    href={party.website}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    whileHover={{ x: 5 }}
+                                                    whileTap={{ scale: 0.98 }}
+                                                    className="flex items-center text-nfp-blue font-medium text-sm"
+                                                >
+                                                    Site officiel
+                                                    <HiArrowRight className="ml-2" />
+                                                </motion.a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Section des actualités et annonces - Droite */}
+                    <div className="lg:w-1/3">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, delay: 0.3 }}
+                            viewport={{ once: true }}
+                            className="sticky top-6 bg-white/90 shadow-lg border border-gray-200 p-6 backdrop-blur-sm"
+                        >
+
+                            {/* Carousel des annonces */}
+                            <div className="relative h-96 overflow-hidden">
+                                <AnimatePresence mode="wait">
+                                    {announcements.map((announcement, index) => (
+                                        index === currentAnnouncement && (
+                                            <motion.div
+                                                key={announcement.id}
+                                                initial={{ opacity: 0, x: 50 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                exit={{ opacity: 0, x: -50 }}
+                                                transition={{ duration: 0.5 }}
+                                                className="absolute inset-0"
+                                            >
+                                                {/* Image de l'annonce avec superposition de dégradé */}
+                                                <div className="h-40 bg-gray-200 mb-4 relative overflow-hidden">
+                                                    <img 
+                                                        src={announcement.image} 
+                                                        alt={announcement.title}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-nfp-blue/70 to-nfp-yellow/70 flex items-center justify-center">
+                                                        <span className="text-white font-bold text-xl">{announcement.type.toUpperCase()}</span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex items-center text-sm text-gray-500 mb-2">
+                                                    <HiCalendar className="mr-2" />
+                                                    <span>{announcement.date}</span>
+                                                </div>
+
+                                                <h4 className="text-lg font-bold text-nfp-blue mb-3">{announcement.title}</h4>
+                                                <p className="text-gray-700 mb-4">{announcement.excerpt}</p>
+
+                                            </motion.div>
+                                        )
+                                    ))}
+                                </AnimatePresence>
+
+                                {/* Indicateurs de slide */}
+                                <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                                    {announcements.map((_, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => setCurrentAnnouncement(index)}
+                                            className={`w-2 h-2 rounded-full ${index === currentAnnouncement ? 'bg-nfp-blue' : 'bg-gray-300'}`}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Appel à l'action */}
+                            <motion.div
+                                whileHover={{ scale: 1.02 }}
+                                className="mt-8 p-4 bg-gradient-to-r from-nfp-blue to-nfp-blue/80 text-white text-center"
+                            >
+                                <HiHeart className="text-2xl mx-auto mb-2" />
+                                <h4 className="font-bold mb-2">Rejoignez le mouvement</h4>
+                                <p className="text-sm mb-3">Soyez acteur du changement</p>
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="bg-white text-nfp-blue px-4 py-2 font-bold w-full"
+                                >
+                                    Adhérer maintenant
+                                </motion.button>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="text-center mt-16"
+                >
+                    <motion.button
+                        whileHover={{ scale: 1.05, backgroundColor: "#1E40AF" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-nfp-blue text-white font-semibold px-8 py-4 shadow-md hover:shadow-lg transition-all flex items-center mx-auto"
+                    >
+                        Voir tous les partis membres
+                        <HiArrowRight className="ml-2" />
+                    </motion.button>
+                </motion.div>
+            </div>
+        </section>
+    )
 }
 
 export default Parties

@@ -238,7 +238,7 @@ const About = () => {
                     {value.title}
                   </h4>
                   
-                  <p className="text-nfp-white/90 text-center leading-relaxed">
+                  <p className="text-nfp-white/90 text-center text-lg md:text-xl text-nfp-black/90 leading-relaxed mb-6 md:mb-8">
                     {value.description}
                   </p>
                 </div>
@@ -283,7 +283,7 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="mb-6 md:mb-8 text-lg leading-relaxed"
+                className="mb-6 md:mb-8 text-lg leading-relaxed text-lg md:text-xl text-nfp-black/90 mb-6 md:mb-8 text-nfp-white"
               >
                 Porter une <strong>vision audacieuse</strong> qui réinvente la politique camerounaise, en plaçant le citoyen au cœur de toutes les actions et décisions. Nous œuvrons pour un Cameroun réconcilié avec lui-même, prospère et influent sur la scène internationale.
               </motion.p>

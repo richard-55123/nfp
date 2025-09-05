@@ -25,47 +25,35 @@ const Header = () => {
   return (
     <>
       {/* Bandeau supérieur avec logo et drapeau */}
-      <motion.div 
+      <motion.div
         initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.7, type: "spring" }}
-        className="w-full  shadow-md relative overflow-hidden "
+        className="w-full  shadow-md relative overflow-hidden  "
       >
         {/* Éléments d'arrière-plan décoratifs */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-32 h-32 bg-nfp-yellow rounded-full -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-nfp-yellow rounded-full translate-x-1/2 translate-y-1/2"></div>
         </div>
-        
+
         <div className="container mx-auto py-3 relative z-10 px-[6.5%]">
           <div className="flex justify-between items-center">
             {/* Logo avec effet de rayonnement */}
-            <motion.div 
-              className="relative flex items-center"
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <motion.div 
+            <div
+              className="relative flex items-center">
+              <div
                 className="absolute -inset-3 bg-nfp-yellow/20 rounded-full"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.5, 0.8, 0.5]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
               />
-              <img 
+              <img
                 src="/NFP.png"
-                alt="NFP" 
-                className="h-14 md:h-16 w-auto object-contain relative z-10 drop-shadow-lg"
+                alt="NFP"
+                className="h-9 md:h-9 w-auto object-cover z-10 drop-shadow-lg"
               />
-            </motion.div>
-            
+            </div>
+
             {/* Titre central pour mobile */}
-            <motion.div 
+            <motion.div
               className="md:hidden text-nfp-white font-bold text-sm tracking-wide text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -73,13 +61,13 @@ const Header = () => {
             >
               NOUVELLES FORCES<br />POLITIQUES
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative flex items-center"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <motion.div 
+              <motion.div
                 className="absolute -inset-3 bg-nfp-yellow/20 rounded-full"
                 animate={{
                   scale: [1, 1.1, 1],
@@ -91,9 +79,9 @@ const Header = () => {
                   ease: "easeInOut"
                 }}
               />
-              <img 
+              <img
                 src="/embleme.png"
-                alt="NFP" 
+                alt="NFP"
                 className="h-14 md:h-16 w-auto object-contain relative z-10 drop-shadow-lg"
               />
             </motion.div>
@@ -102,7 +90,7 @@ const Header = () => {
       </motion.div>
 
       {/* Header principal avec effet de sticky avancé */}
-      <motion.header 
+      <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -111,28 +99,61 @@ const Header = () => {
         <div className="container mx-auto  py-3 px-[6.5%]">
           <div className="flex justify-between items-center">
             {/* Titre du parti avec effet de profondeur - Desktop seulement */}
-            {/* <motion.div 
-              className="hidden md:flex items-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <div className="text-nfp-white font-bold text-xl tracking-wide relative">
-                <div className="absolute -inset-x-2 -inset-y-1 bg-nfp-blue-dark/50 blur rounded-lg"></div>
-                <span className="relative drop-shadow-md">NOUVELLES FORCES POLITIQUES</span>
-              </div>
-            </motion.div> */}
+            {isScrolled ? (
+              <motion.div
+                className="hidden md:flex items-center space-x-1"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                {/* Logo PNG */}
+                <div className="relative w-14 h-14 flex items-center justify-center">
+                  <img
+                    src="/NP.png"
+                    alt="Logo NFP"
+                    width={56}
+                    height={56}
+                    className="object-contain drop-shadow-md"
+                  />
+                </div>
+
+                {/* Texte à côté */}
+                <div className="relative">
+                  <div className="absolute -inset-x-2 -inset-y-1 bg-blue-900/40 blur-md rounded-lg"></div>
+                  <div className="relative flex flex-col">
+                    <span className="text-xl font-extrabold text-nfp-white tracking-wide drop-shadow-md">
+                      NFP
+                    </span>
+                    <span className="text-sm text-nfp-white font-medium">
+                      Nouvelle Force Politique
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div 
+                className="hidden md:flex items-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="text-nfp-white font-bold text-xl tracking-wide relative">
+                  <div className="absolute -inset-x-2 -inset-y-1 bg-nfp-blue-dark/50 blur rounded-lg"></div>
+                  <span className="relative drop-shadow-md">NOUVELLES FORCES POLITIQUES</span>
+                </div>
+              </motion.div>
+            )}
 
             {/* Desktop Navigation avec design politique moderne */}
             <nav className="hidden md:flex space-x-1 relative">
               {/* Élément décoratif arrière avec effet de vague */}
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-nfp-yellow/10 rounded-full blur-md"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.6 }}
               />
-              
+
               {menuItems.map((item, index) => (
                 <motion.div
                   key={index}
@@ -143,7 +164,7 @@ const Header = () => {
                 >
                   <motion.a
                     href={item.href}
-                    whileHover={{ 
+                    whileHover={{
                       y: -3,
                       transition: { type: "spring", stiffness: 500 }
                     }}
@@ -152,17 +173,17 @@ const Header = () => {
                   >
                     {/* <span className="text-nfp-yellow">{item.icon}</span> */}
                     {item.name}
-                    
+
                     {/* Effet de soulignement animé avec vague */}
-                    <motion.div 
+                    <motion.div
                       className="absolute bottom-0 left-0 w-full h-0.5 bg-nfp-yellow origin-left"
                       initial={{ scaleX: 0 }}
                       whileHover={{ scaleX: 1 }}
                       transition={{ duration: 0.3 }}
                     />
-                    
+
                     {/* Effet de fond au survol */}
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 bg-nfp-yellow/10 rounded-lg -z-10"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
@@ -174,7 +195,7 @@ const Header = () => {
             </nav>
 
             {/* Mobile Menu Button avec design amélioré */}
-            <motion.div 
+            <motion.div
               className="md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -186,13 +207,13 @@ const Header = () => {
                 aria-label="Menu mobile"
               >
                 {/* Effet d'arrière-plan au survol */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-nfp-yellow"
                   initial={{ x: "-100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
                 />
-                
+
                 <span className="relative z-10 flex items-center">
                   <AnimatePresence mode="wait">
                     {isOpen ? (
@@ -218,9 +239,9 @@ const Header = () => {
                     )}
                   </AnimatePresence>
                 </span>
-                
+
                 {/* Animation de pulsation */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 border-2 border-nfp-yellow rounded-lg"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -248,7 +269,7 @@ const Header = () => {
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: index * 0.1 }}
-                      whileHover={{ 
+                      whileHover={{
                         x: 10,
                         backgroundColor: "rgba(255, 215, 0, 0.15)"
                       }}
@@ -256,22 +277,22 @@ const Header = () => {
                       className="text-nfp-white font-sans font-medium px-6 py-4 mx-2 rounded-lg transition-colors flex items-center relative overflow-hidden"
                     >
                       {/* Ligne décorative animée */}
-                      <motion.div 
+                      <motion.div
                         className="absolute left-0 top-0 h-full w-1 bg-nfp-yellow"
                         initial={{ scaleY: 0 }}
                         whileInView={{ scaleY: 1 }}
                         transition={{ duration: 0.3 }}
                       />
-                      
+
                       {/* Icône */}
                       {/* <span className="mr-3 text-nfp-yellow">
                         {item.icon}
                       </span> */}
                       
                       {item.name}
-                      
+
                       {/* Animation de bordure */}
-                      <motion.div 
+                      <motion.div
                         className="absolute inset-0 border border-nfp-yellow/30 rounded-lg"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
@@ -280,9 +301,9 @@ const Header = () => {
                     </motion.a>
                   ))}
                 </div>
-                
+
                 {/* Footer du menu mobile */}
-                <motion.div 
+                <motion.div
                   className="border-t border-nfp-yellow/20 pt-4 pb-2 px-4 text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}

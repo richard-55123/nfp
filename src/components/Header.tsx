@@ -111,7 +111,7 @@ const Header = () => {
         <div className="container mx-auto  py-3 px-[6.5%]">
           <div className="flex justify-between items-center">
             {/* Titre du parti avec effet de profondeur - Desktop seulement */}
-            <motion.div 
+            {/* <motion.div 
               className="hidden md:flex items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -121,7 +121,7 @@ const Header = () => {
                 <div className="absolute -inset-x-2 -inset-y-1 bg-nfp-blue-dark/50 blur rounded-lg"></div>
                 <span className="relative drop-shadow-md">NOUVELLES FORCES POLITIQUES</span>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Desktop Navigation avec design politique moderne */}
             <nav className="hidden md:flex space-x-1 relative">
@@ -148,9 +148,9 @@ const Header = () => {
                       transition: { type: "spring", stiffness: 500 }
                     }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-nfp-white font-sans font-medium px-4 py-2 rounded-lg relative block transition-colors group flex items-center gap-2"
+                    className="text-nfp-white font-sans font-medium px-4 py-2 rounded-lg relative block transition-colors group flex items-center gap-5"
                   >
-                    <span className="text-nfp-yellow">{item.icon}</span>
+                    {/* <span className="text-nfp-yellow">{item.icon}</span> */}
                     {item.name}
                     
                     {/* Effet de soulignement animé avec vague */}
@@ -264,9 +264,9 @@ const Header = () => {
                       />
                       
                       {/* Icône */}
-                      <span className="mr-3 text-nfp-yellow">
+                      {/* <span className="mr-3 text-nfp-yellow">
                         {item.icon}
-                      </span>
+                      </span> */}
                       
                       {item.name}
                       

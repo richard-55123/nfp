@@ -2,8 +2,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { HiArrowRight, HiUserGroup, HiCalendar, HiHeart } from 'react-icons/hi'
 import { useState, useEffect } from 'react'
 import { parties } from '../data/parties'
+import JoinModal from './JoinModal'
 
 const Parties = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [announcements] = useState([
         {
@@ -52,11 +54,11 @@ const Parties = () => {
     return (
         <section id="parties" className="py-20 bg-gradient-to-br from-nfp-blue/5 to-nfp-white relative overflow-hidden">
             {/* Image de fond ajoutée ici */}
-            <div 
+            <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
                 style={{ backgroundImage: "url('/NFP.png')" }}
             ></div>
-            
+
             {/* Éléments décoratifs géométriques */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-0 left-0 w-64 h-64 border-t-4 border-l-4 border-nfp-yellow/20"></div>
@@ -201,8 +203,8 @@ const Parties = () => {
                                             >
                                                 {/* Image de l'annonce avec superposition de dégradé */}
                                                 <div className="h-40 bg-gray-200 mb-4 relative overflow-hidden">
-                                                    <img 
-                                                        src={announcement.image} 
+                                                    <img
+                                                        src={announcement.image}
                                                         alt={announcement.title}
                                                         className="w-full h-full object-cover"
                                                     />
@@ -245,6 +247,7 @@ const Parties = () => {
                                 <h4 className="font-bold mb-2">Rejoignez le mouvement</h4>
                                 <p className="text-sm mb-3">Soyez acteur du changement</p>
                                 <motion.button
+                                    onClick={() => setIsModalOpen(true)}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     className="bg-white text-nfp-blue px-4 py-2 font-bold w-full"
@@ -273,6 +276,7 @@ const Parties = () => {
                     </motion.button>
                 </motion.div>
             </div>
+            <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     )
 }

@@ -8,6 +8,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary:"#2E3192",
+        secondary:"#FDB913",
         nfp: {
           blue: "#2E3192",   // Bleu du texte NFP
           yellow: "#FDB913", // Jaune/orange du cercle

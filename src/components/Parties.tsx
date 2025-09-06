@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { HiArrowRight, HiUserGroup, HiCalendar, HiHeart } from 'react-icons/hi'
+import { HiArrowRight, HiCalendar, HiHeart } from 'react-icons/hi'
 import { useState, useEffect } from 'react'
 import { parties } from '../data/parties'
 import JoinModal from './JoinModal'
@@ -52,7 +52,7 @@ const Parties = () => {
     }, [announcements.length])
 
     return (
-        <section id="parties" className="py-20 bg-gradient-to-br from-nfp-blue/5 to-nfp-white relative overflow-hidden">
+        <section id="parties" className="py-12 bg-gradient-to-br from-nfp-blue/5 to-nfp-white relative overflow-hidden">
             {/* Image de fond ajoutée ici */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
@@ -65,7 +65,7 @@ const Parties = () => {
                 <div className="absolute bottom-0 right-0 w-64 h-64 border-b-4 border-r-4 border-nfp-blue/20"></div>
             </div>
 
-            <div className="container mx-auto px-[6.5%] relative z-10">
+            <div className="container mx-auto lg:px-[10%] px-[6.5%] relative z-10">
 
                 <motion.div
                     initial={{ scale: 0.9 }}
@@ -104,7 +104,7 @@ const Parties = () => {
                                 className="bg-white/80 hover:bg-gray-50/80 transition-all duration-300 border-b border-gray-200 last:border-b-0 backdrop-blur-sm"
                             >
                                 <div className="py-8">
-                                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                                    <div className="flex flex-col md:flex-row items-start md:items-center px-5 gap-6">
                                         {/* Logo et couleur identitaire */}
                                         <div className="flex-shrink-0 flex items-start">
                                             <div className="relative">
@@ -136,10 +136,6 @@ const Parties = () => {
                                                     <span className="px-3 py-1 text-xs font-semibold bg-gray-100 text-nfp-blue">
                                                         {party.ideology}
                                                     </span>
-                                                    <div className="flex items-center text-sm text-gray-500">
-                                                        <HiUserGroup className="mr-1" />
-                                                        <span>{party.members} membres</span>
-                                                    </div>
                                                 </div>
                                             </div>
 
@@ -148,16 +144,7 @@ const Parties = () => {
                                             </p>
 
                                             <div className="flex items-center justify-between">
-                                                <div className="flex items-center">
-                                                    <div className="w-8 h-8 bg-gray-200 mr-3">
-                                                        <img
-                                                            src={party.leaderImage}
-                                                            alt={`Portrait de ${party.leader}`}
-                                                            className="w-full h-full object-cover"
-                                                        />
-                                                    </div>
-                                                    <span className="text-sm font-medium text-nfp-blue">{party.leader}</span>
-                                                </div>
+                                               
 
                                                 <motion.a
                                                     href={party.website}

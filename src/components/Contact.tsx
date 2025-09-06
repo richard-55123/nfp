@@ -53,12 +53,29 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-nfp-blue/5 via-nfp-white to-nfp-yellow/10 relative overflow-hidden">
+    <section id="contact" className="py-12 bg-gradient-to-br from-nfp-blue/5 via-nfp-white to-nfp-yellow/10 relative overflow-hidden">
       {/* Éléments décoratifs */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-nfp-yellow/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-nfp-blue/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+      <div className="absolute top-0 right-0 w-72 h-72 bg-nfp-yellow/10 -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-nfp-blue/10 translate-y-1/2 -translate-x-1/2"></div>
 
-      <div className="container mx-auto px-[6.5%] relative z-10">
+      {/* Image de fond agrandie et plus visible */}
+      <div className="absolute left-0 top-0 w-full md:w-2/3 h-full opacity-15 md:opacity-20 z-0">
+        <img
+          src="/monumentOne.png" // Remplacez par le chemin de votre image
+          alt="Décoration de fond"
+          className="w-full h-full object-cover object-left"
+        />
+      </div>
+
+      <div className="absolute bottom-20 right-8 w-28 h-36 md:w-36 md:h-44 opacity-80">
+        <img
+          src="/loveCamer.png"
+          alt="Image politique 2"
+          className="w-full h-full object-cover shadow-md"
+        />
+      </div>
+
+      <div className="container mx-auto lg:px-[10%] px-[6.5%] relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,11 +83,11 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-nfp-blue mb-4 md:mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-nfp-blue mb-2 md:mb-4 leading-tight">
             Rejoignez la <span className="text-nfp-yellow">Révolution</span> Citoyenne
           </h2>
-          <div className="w-20 h-1 bg-nfp-yellow mx-auto"></div>
-          <p className="text-lg md:text-xl text-nfp-black/90 leading-relaxed mb-6 md:mb-8 ">
+          <div className="w-20 h-1 bg-nfp-yellow mx-auto mb-4"></div>
+          <p className="text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl text-nfp-black/90 leading-normal xs:leading-relaxed sm:leading-relaxed mb-4 xs:mb-5 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 ">
             Votre voix compte dans cette alliance historique. Que vous soyez citoyen engagé,
             expert passionné ou simplement curieux de contribuer au renouveau camerounais,
             nous sommes à votre écoute.
@@ -94,9 +111,9 @@ const Contact = () => {
             <div className="space-y-3.5">
               <motion.div
                 variants={itemVariants}
-                className="flex items-start bg-white/80 backdrop-blur-sm p-5 border border-nfp-blue/10"
+                className="flex items-start bg-white/90 backdrop-blur-sm p-5 border border-nfp-blue/10"
               >
-                <div className="bg-nfp-blue/10 p-3 rounded-full mr-4 flex-shrink-0">
+                <div className="bg-nfp-blue/10 p-3 mr-4 flex-shrink-0">
                   <HiMail className="text-nfp-blue text-xl" />
                 </div>
                 <div>
@@ -108,9 +125,9 @@ const Contact = () => {
 
               <motion.div
                 variants={itemVariants}
-                className="flex items-start bg-white/80 backdrop-blur-sm p-5 border border-nfp-blue/10"
+                className="flex items-start bg-white/90 backdrop-blur-sm p-5 border border-nfp-blue/10"
               >
-                <div className="bg-nfp-blue/10 p-3 rounded-full mr-4 flex-shrink-0">
+                <div className="bg-nfp-blue/10 p-3 mr-4 flex-shrink-0">
                   <HiPhone className="text-nfp-blue text-xl" />
                 </div>
                 <div>
@@ -122,9 +139,9 @@ const Contact = () => {
 
               <motion.div
                 variants={itemVariants}
-                className="flex items-start bg-white/80 backdrop-blur-sm p-5 border border-nfp-blue/10"
+                className="flex items-start bg-white/90 backdrop-blur-sm p-5 border border-nfp-blue/10"
               >
-                <div className="bg-nfp-blue/10 p-3 rounded-full mr-4 flex-shrink-0">
+                <div className="bg-nfp-blue/10 p-3 mr-4 flex-shrink-0">
                   <HiLocationMarker className="text-nfp-blue text-xl" />
                 </div>
                 <div>
@@ -158,9 +175,9 @@ const Contact = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-white  shadow-soft-xl p-8 border border-nfp-blue/10 relative overflow-hidden">
+            <div className="bg-white/95 shadow-soft-xl p-8 border border-nfp-blue/10 relative overflow-hidden">
               {/* Élément décoratif */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-nfp-yellow/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-nfp-yellow/10 -translate-y-1/2 translate-x-1/2"></div>
 
               <motion.h3
                 initial={{ opacity: 0, y: 10 }}
@@ -186,7 +203,7 @@ const Contact = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-nfp-yellow/20 border border-nfp-yellow/30 text-nfp-blue p-6 rounded-xl text-center"
+                  className="bg-nfp-yellow/20 border border-nfp-yellow/30 text-nfp-blue p-6 text-center"
                 >
                   <HiPaperAirplane className="text-4xl text-nfp-yellow mx-auto mb-3" />
                   <h4 className="font-heading font-bold text-lg mb-2">Message envoyé avec succès!</h4>
@@ -213,7 +230,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Nom et prénoms"
-                        className="w-full px-4 py-3 border border-nfp-blue/20 rounded-lg focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-nfp-blue/20 focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
                         required
                       />
                     </div>
@@ -229,7 +246,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="adresse@exemple.cm"
-                        className="w-full px-4 py-3 border border-nfp-blue/20 rounded-lg focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
+                        className="w-full px-4 py-3 border border-nfp-blue/20 focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
                         required
                       />
                     </div>
@@ -246,7 +263,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="Sujet de discussion"
-                      className="w-full px-4 py-3 border border-nfp-blue/20 rounded-lg focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-nfp-blue/20 focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
                       required
                     />
                   </div>
@@ -262,7 +279,7 @@ const Contact = () => {
                       onChange={handleChange}
                       rows={5}
                       placeholder="Dites-nous comment vous souhaitez contribuer au renouveau..."
-                      className="w-full px-4 py-3 border border-nfp-blue/20 rounded-lg focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-nfp-blue/20 focus:ring-2 focus:ring-nfp-yellow focus:border-transparent transition-all"
                       required
                     ></textarea>
                   </div>
@@ -271,15 +288,11 @@ const Contact = () => {
                     type="submit"
                     whileHover={{ scale: 1.02, boxShadow: "0 10px 25px -5px rgba(0, 85, 170, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gradient-to-r from-nfp-blue to-nfp-blue/90 text-white py-4 rounded-lg font-sans font-medium transition-all flex items-center justify-center group"
+                    className="w-full bg-gradient-to-r from-nfp-blue to-nfp-blue/90 text-white py-4 font-sans font-medium transition-all flex items-center justify-center group"
                   >
                     <span>Transmettre mon message</span>
                     <HiPaperAirplane className="ml-2 transform group-hover:translate-x-1 transition-transform" />
                   </motion.button>
-
-                  {/* <p className="text-center text-sm text-nfp-black/50 mt-4">
-                    Nous traitons chaque message avec confidentialité et respect.
-                  </p> */}
                 </motion.form>
               )}
             </div>

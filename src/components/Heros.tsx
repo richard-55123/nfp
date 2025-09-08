@@ -1,8 +1,8 @@
-import React from 'react'
+// import React from 'react'
 
 function Heros() {
   return (
-    <div className='px-[10%] py-6 flex flex-col justify-center relative h-[calc(100vh-133px)] bg-green-800'>
+    <div className='px-[10%] py-6 flex flex-col justify-center relative h-[calc(100vh-133px)]'>
       <img src="/images/ban2.jpg" alt='bannieère_fnp' className='absolute w-full h-full z-[0] object-cover top-0 left-0' />
       <div className="absolute w-full h-full top-0 left-0 bg-secondary/10"></div>
       <div className="relative w-[70%] flex flex-col gap-5">

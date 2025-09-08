@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { GrUserAdd } from 'react-icons/gr'
 import { NavLink } from 'react-router-dom'
 
@@ -6,15 +6,16 @@ function Headers() {
 
       const liens = [
             { name: 'Accueil', href: '#home' },
-            { name: 'À propos', href: '/about' },
-            { name: 'Missions', href: '/missions' },
-            { name: 'Partis', href: '/parties'},
+            { name: 'Parti', href: '/about' },
             { name: 'Évènements', href: '/evenements' },
+            { name: 'Adhésion', href: '/Adhésion'},
+            { name: 'Documents', href: '/Documents' },
             { name: 'Contact', href: '/contact' },
           ]
       return (
             <>
-                  <div className='flex items-center relative bg-[#e5deda] px-[10%] pt-2 pb-8 justify-between'>
+                  {/* <div className='bg-primary py-'></div> */}
+                  <div className='flex items-center border-t-[3px] border-primary relative bg-[#e5deda] px-[10%] pt-2 pb-8 justify-between'>
                         <div><img src="/NFP.png" className='h-[100px]' alt='logo_nfp' /></div>
                         <div className='flex gap-1.5 items-center'>
                               <img src="/icon2.png" alt='#' />
@@ -24,14 +25,14 @@ function Headers() {
                               </div>
                         </div>
 
-                        <div className='bg-primary z-[1] flex justify-between items-center absolute w-[80%] -bottom-8'>
+                        <div className='bg-primary z-[1] flex justify-between items-center absolute w-[80%] -bottom-6'>
                               <ul className='flex link-nfp items-center text-white/80 font-light text-[.85rem]'>
                                     {liens?.map((x,ind)=>
-                                          <li className='nav' key={ind}><NavLink className="py-5 block text-center px-9 border-r border-white/20" to={x.href}>{x.name}</NavLink></li>
+                                          <li className='nav' key={ind}><NavLink className="py-4 block text-center px-7 border-r border-white/20" to={x.href}>{x.name}</NavLink></li>
                                     )}
                               </ul>
-                              <div className='pr-2'>
-                                    <NavLink to={"#"} className="px-7 flex items-center gap-2 text-[.8rem] font-semibold bg-white py-3.5"><GrUserAdd className='text-[1rem]' strokeWidth={3}/> Rejoindre le mouvement</NavLink>
+                              <div className='pr-1'>
+                                    <NavLink to={"#"} className="px-7 flex items-center gap-2 text-[.8rem] font-semibold bg-white py-3"><GrUserAdd className='text-[1rem]' strokeWidth={3}/> Rejoindre le mouvement</NavLink>
                               </div>
                         </div>
                   </div>

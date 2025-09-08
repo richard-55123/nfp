@@ -249,7 +249,7 @@ const Footer = () => {
     )
 
     return (
-        <footer className="relative bg-gray-900 text-white overflow-hidden">
+        <footer className="relative bg-black/70 text-white overflow-hidden">
             {/* Pattern d'arrière-plan */}
             {/* <div className="absolute inset-0 bg-nfp-blue/5 bg-pattern"></div> */}
 
@@ -267,14 +267,14 @@ const Footer = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        viewport={{ once: true, margin: "-50px" }}
+                        viewport={{ once: true, margin: "" }}
                     >
-                        <div className="flex flex-col h-full py-8">
+                        <div className="flex flex-col h-full ">
                             <div className="flex items-center mb-6">
-                                <div className="relative flex items-center mr-4">
-                                    <div className="absolute -inset-3 bg-nfp-white/40 " />
+                                <div className="relative flex items-center ">
+                                    <div className="absolute -inset-3 pt-2 " />
                                     <img
-                                        src="/NFP.png"
+                                        src="/footerLogo.png"
                                         alt="NFP"
                                         className="h-17 w-auto object-contain z-10 drop-shadow-lg"
                                     />
@@ -284,7 +284,7 @@ const Footer = () => {
                                 </div> */}
                             </div>
 
-                            <p className="text-gray-300 mb-6 max-w-md">
+                            <p className="leading-relaxed text-[.9rem] md:text-[1.07rem]  mb-6 max-w-md">
                                 Le Nouvelle Forces Politiques est une coalition engagée pour
                                 le progrès et le développement national. Rejoignez-nous dans
                                 notre mission pour un avenir meilleur.
@@ -321,7 +321,7 @@ const Footer = () => {
                         viewport={{ once: true, margin: "-50px" }}
                         className="py-4"
                     >
-                        <h4 className="text-lg font-bold mb-5 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-nfp-yellow">
+                        <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold mb-5 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-nfp-yellow">
                             Liens Rapides
                         </h4>
                         <ul className="space-y-3">
@@ -350,7 +350,7 @@ const Footer = () => {
                         viewport={{ once: true, margin: "-50px" }}
                         className="py-4"
                     >
-                        <h4 className="text-lg font-bold mb-5 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-nfp-yellow">
+                        <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold mb-5 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-nfp-yellow">
                             Partis Membres
                         </h4>
                         <div className="space-y-4">
@@ -405,7 +405,7 @@ const Footer = () => {
                         viewport={{ once: true, margin: "-50px" }}
                         className="py-4"
                     >
-                        <h4 className="text-lg font-bold mb-5 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-nfp-yellow">
+                        <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold mb-5 relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-nfp-yellow">
                             Contact
                         </h4>
                         <div className="space-y-4">

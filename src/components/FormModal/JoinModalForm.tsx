@@ -47,9 +47,9 @@ const JoinModalForm = ({ formData, setFormData, onSubmit }: JoinModalFormProps) 
       <motion.button
         variants={itemVariants}
         type="submit"
-        whileHover={{ scale: 1.02, boxShadow: "0 10px 25px -5px rgba(0, 85, 170, 0.3)" }}
+        // whileHover={{ scale: 1.02, boxShadow: "0 10px 25px -5px rgba(0, 85, 170, 0.3)" }}
         whileTap={{ scale: 0.98 }}
-        className="w-full bg-gradient-to-r from-nfp-blue to-nfp-blue/90 text-white py-4 font-bold transition-all flex items-center justify-center group text-lg"
+        className="text-[.8rem] md:text-[1.3rem] font-heading font-bold w-full border border-nfp-blue text-nfp-blue  font-semibold py-3 px-4 transition-all flex items-center justify-center group text-lg"
       >
         <span>Rejoindre le Mouvement</span>
         <HiPaperAirplane className="ml-2 transform group-hover:translate-x-1 transition-transform" />
@@ -58,4 +58,4 @@ const JoinModalForm = ({ formData, setFormData, onSubmit }: JoinModalFormProps) 
   );
 };
 
-export default JoinModalForm;
+export default JoinModalForm;  

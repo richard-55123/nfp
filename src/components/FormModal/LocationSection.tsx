@@ -25,14 +25,14 @@ const LocationSection = ({ formData, setFormData }: SectionProps) => {
       }}
       className="bg-white p-6 border border-nfp-blue/10 shadow-soft-xl"
     >
-      <h4 className="text-nfp-blue font-bold text-xl mb-4 flex items-center gap-2">
+      <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-4 flex items-center gap-2">
         <HiLocationMarker className="text-lg" />
         Localisation
       </h4>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="profession" className="block text-sm font-medium text-nfp-blue mb-2">Profession *</label>
+          <label htmlFor="profession" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Profession *</label>
           <div className="relative">
             <HiBriefcase className="absolute left-3 top-3 text-nfp-blue/60" />
             <input
@@ -49,7 +49,7 @@ const LocationSection = ({ formData, setFormData }: SectionProps) => {
         </div>
         
         <div>
-          <label htmlFor="city" className="block text-sm font-medium text-nfp-blue mb-2">Ville *</label>
+          <label htmlFor="city" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Ville *</label>
           <div className="relative">
             <HiLocationMarker className="absolute left-3 top-3 text-nfp-blue/60" />
             <input
@@ -67,7 +67,7 @@ const LocationSection = ({ formData, setFormData }: SectionProps) => {
       </div>
 
       <div className="mt-6">
-        <label htmlFor="region" className="block text-sm font-medium text-nfp-blue mb-2">Région *</label>
+        <label htmlFor="region" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Région *</label>
         <div className="relative">
           <HiLocationMarker className="absolute left-3 top-3 text-nfp-blue/60" />
           <select

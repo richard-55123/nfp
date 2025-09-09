@@ -84,7 +84,7 @@ const JoinModal = ({ isOpen, onClose }: JoinModalProps) => {
                   transition={{ delay: 0.2 }}
                   className="bg-nfp-yellow/10 p-6 mb-6 border border-nfp-yellow/20"
                 >
-                  <p className="text-nfp-blue text-center italic text-lg">
+                  <p className="text-nfp-blue text-center italic text-[.9rem] md:text-[1.07rem]">
                     "Ensemble, nous bâtissons un avenir meilleur pour toutes les régions du Cameroun"
                   </p>
                 </motion.div>

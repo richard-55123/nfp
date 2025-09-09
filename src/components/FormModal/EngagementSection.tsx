@@ -25,13 +25,13 @@ const EngagementSection = ({ formData, setFormData }: SectionProps) => {
       }}
       className="bg-white p-6 border border-nfp-blue/10 shadow-soft-xl"
     >
-      <h4 className="text-nfp-blue font-bold text-xl mb-4 flex items-center gap-2">
+      <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-4 flex items-center gap-2">
         <HiUserGroup className="text-lg" />
         Engagement
       </h4>
       
       <div>
-        <label htmlFor="availability" className="block text-sm font-medium text-nfp-blue mb-2">Disponibilité pour l'engagement *</label>
+        <label htmlFor="availability" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Disponibilité pour l'engagement *</label>
         <div className="relative">
           <HiClipboardList className="absolute left-3 top-3 text-nfp-blue/60" />
           <select

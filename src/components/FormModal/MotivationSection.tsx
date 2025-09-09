@@ -25,13 +25,13 @@ const MotivationSection = ({ formData, setFormData }: SectionProps) => {
       }}
       className="bg-white p-6 border border-nfp-blue/10 shadow-soft-xl"
     >
-      <h4 className="text-nfp-blue font-bold text-xl mb-4 flex items-center gap-2">
+      <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-4 flex items-center gap-2">
         <HiLightningBolt className="text-lg" />
         Motivation et Compétences
       </h4>
       
       <div className="mb-6">
-        <label htmlFor="motivation" className="block text-sm font-medium text-nfp-blue mb-2">Pourquoi souhaitez-vous rejoindre le mouvement ? *</label>
+        <label htmlFor="motivation" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Pourquoi souhaitez-vous rejoindre le mouvement ? *</label>
         <textarea
           id="motivation"
           name="motivation"
@@ -45,7 +45,7 @@ const MotivationSection = ({ formData, setFormData }: SectionProps) => {
       </div>
 
       <div className="mb-6">
-        <label htmlFor="skills" className="block text-sm font-medium text-nfp-blue mb-2">Vos compétences et domaines d'expertise *</label>
+        <label htmlFor="skills" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Vos compétences et domaines d'expertise *</label>
         <textarea
           id="skills"
           name="skills"
@@ -59,7 +59,7 @@ const MotivationSection = ({ formData, setFormData }: SectionProps) => {
       </div>
 
       <div>
-        <label htmlFor="experience" className="block text-sm font-medium text-nfp-blue mb-2">Expérience politique ou associative</label>
+        <label htmlFor="experience" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Expérience politique ou associative</label>
         <textarea
           id="experience"
           name="experience"

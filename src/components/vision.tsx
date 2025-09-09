@@ -31,9 +31,20 @@ export const FuturePlans = () => {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
+    const nextPlan = () => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % plans.length);
+    };
+
+    const prevPlan = () => {
+        setActiveIndex((prevIndex) => (prevIndex - 1 + plans.length) % plans.length);
+    };
+
     return (
-        <div className="py-16 flex flex-col lg:flex-row gap-12 bg-gradient-to-r from-nfp-blue/10 to-nfp-darkblue/10  px-[10%]">
-            <div className="flex-1">
+        <div className="py-16 flex flex-col lg:flex-row gap-12 bg-gradient-to-br from-nfp-blue/5 via-white to-nfp-yellow/5 px-[10%] relative overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-nfp-yellow/10 blur-3xl"></div>
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-nfp-blue/10 blur-3xl"></div>
+
+            <div className="flex-1 relative z-10">
                 <h2 className="font-bold mb-8 relative pb-3 text-3xl lg:text-4xl text-black/70
                                after:content-[''] after:absolute after:left-0 after:bottom-0 
                                after:w-16 after:h-1 after:bg-nfp-yellow">
@@ -47,42 +58,74 @@ export const FuturePlans = () => {
                             onClick={() => setActiveIndex(index)}
                             className={`p-5 cursor-pointer border-l-4 transition-all duration-300 rounded-r-lg
                                 ${activeIndex === index
-                                    ? "text-nfp-darkblue border-nfp-yellow bg-nfp-lightblue shadow-lg transform translate-x-2"
-                                    : "text-nfp-darkblue/80 border-nfp-darkblue/20 hover:bg-nfp-lightblue/50 hover:border-nfp-blue border-b"
+                                    ? "text-white border-nfp-yellow bg-nfp-blue shadow-lg transform translate-x-2"
+                                    : "text-nfp-blue/80 border-nfp-blue/20 hover:bg-nfp-blue/10"
                                 }`}
                         >
                             <div className="flex items-center">
-                                <span className={`mr-4 font-bold text-lg ${activeIndex === index ? "text-nfp-yellow" : "text-nfp-darkblue/60"}`}>
+                                <span className={`mr-4 font-bold text-lg ${activeIndex === index ? "text-nfp-yellow" : "text-nfp-blue/60"}`}>
                                     {index + 1}.
                                 </span>
                                 <h3 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold">{plan.title}</h3>
+
+                                {activeIndex === index && (
+                                    <div className="ml-auto flex items-center">
+                                        <span className="text-nfp-yellow mr-2 text-sm font-semibold">Actif</span>
+                                        <svg className="w-5 h-5 text-nfp-yellow animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
 
-            <div className="flex-1">
+            <div className="flex-1 relative z-10">
                 <h2 className="font-bold mb-8 relative pb-3 text-3xl lg:text-4xl text-black/70
                                after:content-[''] after:absolute after:left-0 after:bottom-0 
                                after:w-16 after:h-1 after:bg-nfp-yellow">
                     Notre vision en action
                 </h2>
 
-                <div className="relative overflow-hidden rounded-lg shadow-xl">
-                    <div className="absolute inset-0 bg-gradient-to-t from-nfp-darkblue/30 to-transparent pointer-events-none z-10"></div>
+                <div className="relative overflow-hidden rounded-lg shadow-xl group">
+                    <div className="absolute inset-0 bg-gradient-to-t from-nfp-blue/40 to-transparent pointer-events-none z-10"></div>
                     <img
                         src={plans[activeIndex].image}
                         alt={plans[activeIndex].title}
-                        className="w-full h-72 object-cover transition-transform duration-500 hover:scale-105"
+                        className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
                     />
+
+                    <button
+                        onClick={prevPlan}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-nfp-blue/80 hover:bg-nfp-blue text-white p-3 rounded-full transition-all duration-300 z-20 shadow-lg"
+                        aria-label="Plan précédent"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button
+                        onClick={nextPlan}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-nfp-blue/80 hover:bg-nfp-blue text-white p-3 rounded-full transition-all duration-300 z-20 shadow-lg"
+                        aria-label="Plan suivant"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-nfp-blue/80 text-white px-3 py-1 rounded-full text-sm font-semibold z-20">
+                        {activeIndex + 1} / {plans.length}
+                    </div>
                 </div>
 
-                <div className="mt-8 p-6 bg-white shadow-lg border-t-4 border-nfp-yellow ">
+                <div className="mt-8 p-6 bg-white shadow-lg border-t-4 border-nfp-yellow rounded-lg">
                     <h3 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-4">
                         {plans[activeIndex].title}
                     </h3>
-                    <p className=" leading-relaxed text-[.9rem] md:text-[1.07rem] text-black/70">
+                    <p className="leading-relaxed text-[.9rem] md:text-[1.07rem] text-black/70">
                         {plans[activeIndex].description}
                     </p>
 
@@ -91,7 +134,7 @@ export const FuturePlans = () => {
                             <button
                                 key={index}
                                 onClick={() => setActiveIndex(index)}
-                                className={`w-4 h-4 transition-all duration-300 rounded-full ${activeIndex === index ? "bg-nfp-yellow scale-125" : "bg-nfp-darkblue/30 hover:bg-nfp-darkblue/50"
+                                className={`w-4 h-4 transition-all duration-300 rounded-full ${activeIndex === index ? "bg-nfp-yellow scale-125" : "bg-nfp-blue/30 hover:bg-nfp-blue/50"
                                     }`}
                                 aria-label={`Aller à la diapositive ${index + 1}`}
                             />

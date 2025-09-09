@@ -25,14 +25,14 @@ const PersonalInfoSection = ({ formData, setFormData }: SectionProps) => {
       }}
       className="bg-white p-6 border border-nfp-blue/10 shadow-soft-xl"
     >
-      <h4 className="text-nfp-blue font-bold text-xl mb-4 flex items-center gap-2">
+      <h4 className="text-black/70 text-[.8rem] md:text-[1.3rem] font-bold text-xl mb-4 flex items-center gap-2">
         <HiUser className="text-lg" />
         Informations Personnelles
       </h4>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-nfp-blue mb-2">Prénom *</label>
+          <label htmlFor="firstName" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Prénom *</label>
           <div className="relative">
             <HiUser className="absolute left-3 top-3 text-nfp-blue/60" />
             <input
@@ -49,7 +49,7 @@ const PersonalInfoSection = ({ formData, setFormData }: SectionProps) => {
         </div>
         
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-nfp-blue mb-2">Nom *</label>
+          <label htmlFor="lastName" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Nom *</label>
           <div className="relative">
             <HiUser className="absolute left-3 top-3 text-nfp-blue/60" />
             <input
@@ -68,7 +68,7 @@ const PersonalInfoSection = ({ formData, setFormData }: SectionProps) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <div>
-          <label htmlFor="age" className="block text-sm font-medium text-nfp-blue mb-2">Âge *</label>
+          <label htmlFor="age" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Âge *</label>
           <div className="relative">
             <HiCalendar className="absolute left-3 top-3 text-nfp-blue/60" />
             <input
@@ -87,7 +87,7 @@ const PersonalInfoSection = ({ formData, setFormData }: SectionProps) => {
         </div>
         
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-nfp-blue mb-2">Téléphone *</label>
+          <label htmlFor="phone" className="block text-black text-[.8rem] md:text-[.87rem] mb-2">Téléphone *</label>
           <div className="relative">
             <HiPhone className="absolute left-3 top-3 text-nfp-blue/60" />
             <input

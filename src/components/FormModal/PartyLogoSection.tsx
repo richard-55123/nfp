@@ -46,7 +46,7 @@ const PartyLogoSection = ({ formData, setFormData }: SectionProps) => {
       }}
       className="bg-white p-6 border border-nfp-blue/10 shadow-soft-xl"
     >
-      <h4 className="text-nfp-blue font-bold text-xl mb-4 flex items-center gap-2">
+      <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-4 flex items-center gap-2">
         <HiPhotograph className="text-lg" />
         Logo du parti politique
       </h4>
@@ -70,7 +70,7 @@ const PartyLogoSection = ({ formData, setFormData }: SectionProps) => {
         ) : (
           <div className="border-2 border-dashed border-nfp-blue/20 p-8 text-center w-full">
             <HiPhotograph className="text-4xl text-nfp-blue/40 mx-auto mb-2" />
-            <p className="text-nfp-blue/60">Aucun logo sélectionné</p>
+            <p className="block text-black text-[.8rem] md:text-[.87rem] text-nfp-blue/60">Aucun logo sélectionné</p>
           </div>
         )}
         
@@ -85,7 +85,7 @@ const PartyLogoSection = ({ formData, setFormData }: SectionProps) => {
           />
           <label
             htmlFor="partyLogo"
-            className="flex-1 bg-nfp-blue text-white py-3 px-4 text-center cursor-pointer hover:bg-nfp-blue/90 transition-colors font-medium"
+            className="flex-1 text-[.8rem] md:text-[1.3rem]  font-bold bg-nfp-blue text-white py-3 px-4 text-center cursor-pointer hover:bg-nfp-blue/90 transition-colors font-medium"
           >
             Choisir un logo
           </label>

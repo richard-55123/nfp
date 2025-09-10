@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { HiPhone, HiMail } from 'react-icons/hi'
 import { useState } from 'react'
 import { parties } from '../data/parties'
 import JoinModal from './JoinModal'

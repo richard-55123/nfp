@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface EventCardProps {
@@ -19,19 +19,19 @@ const EventCard: React.FC<EventCardProps> = ({
     const getVariantClasses = () => {
         switch (variant) {
             case "yellow":
-                return "bg-nfp-yellow text-nfp-blue";
+                return "text-black/70";
             case "dark":
-                return "bg-nfp-black text-white";
+                return "text-black/70";
             case "blue":
             default:
-                return "bg-nfp-blue text-white";
+                return "text-black/70";
         }
     };
 
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
-            className="overflow-hidden shadow-xl flex flex-col bg-white "
+            className="overflow-hidden shadow-xl flex flex-col bg-white min-w-[300px] md:min-w-[350px] mx-4"
         >
             <img src={image} alt={title} className="w-full h-40 md:h-48 object-cover" />
             <div
@@ -43,8 +43,8 @@ const EventCard: React.FC<EventCardProps> = ({
                 </p>
                 <a
                     href={link}
-                    className={`text-[.95rem] md:text-[1.1rem] font-semibold uppercase tracking-wide underline ${variant === "yellow" ? "text-nfp-blue" : "text-white"
-                        }`}
+                    className= "text-[.95rem] md:text-[1.1rem] font-semibold uppercase tracking-wide underline text-nfp-blue"
+                        
                 >
                     Voir Détails
                 </a>
@@ -54,6 +54,40 @@ const EventCard: React.FC<EventCardProps> = ({
 };
 
 const EventsSection: React.FC = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const events = [
+        {
+            image: "/plan/gouvernement.png",
+            title: "Élever la jeunesse",
+            description: "Donner aux jeunes les outils pour transformer leurs rêves en réalités durables.",
+            link: "#",
+            variant: "blue"
+        },
+        {
+            image: "/plan/etudiant.png",
+            title: "Santé & Éducation",
+            description: "Encourager l'accès équitable à la santé et à l'éducation, piliers du changement social.",
+            link: "#",
+            variant: "yellow"
+        },
+        {
+            image: "/plan/pme.png",
+            title: "Unité & Prospérité",
+            description: "Rassembler les communautés autour de valeurs communes pour bâtir une nation plus unie.",
+            link: "#",
+            variant: "blue"
+        }
+    ];
+
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, [events.length]);
+
     return (
         <section className="relative text-white">
             <div className="absolute top-0 left-0 w-full h-[500px]">
@@ -79,30 +113,23 @@ const EventsSection: React.FC = () => {
                 </p>
             </div>
 
-            <div className="relative z-20 max-w-7xl mx-auto px-6 mt-16">
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <EventCard
-                        image="/plan/gouvernement.png"
-                        title="Élever la jeunesse"
-                        description="Donner aux jeunes les outils pour transformer leurs rêves en réalités durables."
-                        link="#"
-                        variant="blue"
-                    />
-                    <EventCard
-                        image="/plan/etudiant.png"
-                        title="Santé & Éducation"
-                        description="Encourager l'accès équitable à la santé et à l'éducation, piliers du changement social."
-                        link="#"
-                        variant="yellow"
-                    />
-                    <EventCard
-                        image="/plan/pme.png"
-                        title="Unité & Prospérité"
-                        description="Rassembler les communautés autour de valeurs communes pour bâtir une nation plus unie."
-                        link="#"
-                        variant="blue"
-                    />
-                </div>
+            <div className="relative z-20 max-w-7xl mx-auto px-6 mt-16 overflow-hidden">
+                <motion.div 
+                    className="flex"
+                    animate={{ x: -currentIndex * 402 }}
+                    transition={{ type: "tween", ease: "easeOut", duration: 0.5 }}
+                >
+                    {events.map((event, index) => (
+                        <EventCard
+                            key={index}
+                            image={event.image}
+                            title={event.title}
+                            description={event.description}
+                            link={event.link}
+                            variant={event.variant as "blue" | "yellow" | "dark"}
+                        />
+                    ))}
+                </motion.div>
             </div>
 
             <div className="pb-20" />

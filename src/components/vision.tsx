@@ -58,7 +58,7 @@ export const FuturePlans = () => {
                             onClick={() => setActiveIndex(index)}
                             className={`p-5 cursor-pointer border-l-4 transition-all duration-300 rounded-r-lg
                                 ${activeIndex === index
-                                    ? "text-white border-nfp-yellow bg-nfp-blue shadow-lg transform translate-x-2"
+                                    ? "text-black/70 border-nfp-yellow  shadow-lg transform translate-x-2"
                                     : "text-nfp-blue/80 border-nfp-blue/20 hover:bg-nfp-blue/10"
                                 }`}
                         >

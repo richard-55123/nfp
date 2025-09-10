@@ -55,7 +55,7 @@ const Parties = () => {
 
                 <div className="flex flex-col lg:flex-row gap-10 px-[10%]">
                     <div className="lg:w-2/3 space-y-6">
-                        <h2 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-4 border-b pb-2">Parties Membres</h2>
+                        <h2 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-4 border-b pb-2">Partis Membres</h2>
 
                         {parties.map((party, index) => (
                             <motion.div

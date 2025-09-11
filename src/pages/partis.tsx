@@ -1,5 +1,5 @@
 import { BiCheckCircle } from "react-icons/bi";
-import { parties } from "../data/parties";
+import Parties from "../components/Parties";
 
 function Parti() {
     return (
@@ -25,15 +25,8 @@ function Parti() {
                 </div>
             </div>
 
-            {/* Intro */}
             <section className="px-[10%] py-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div className="w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg">
-                    <img
-                        src="/possible.png"
-                        alt="progressive"
-                        className="w-full h-full object-cover"
-                    />
-                </div>
+
 
                 <div className="flex flex-col gap-5">
                     <div className="w-[6rem] h-1 bg-nfp-yellow mb-2"></div>
@@ -67,11 +60,19 @@ function Parti() {
                         </div>
                     </div>
                 </div>
+                <div className="w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg">
+                    <img
+                        src="/possible.png"
+                        alt="progressive"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
             </section>
+            <Parties/>
 
 
-            <section className="pt-12 ">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {/* <section className="pt-12 ">
+                <div className="grid grid-cols-1 lg:grid-cols-3">
 
 
                     <div className="flex items-center justify-center border-gray-300 h-full">
@@ -83,7 +84,7 @@ function Parti() {
                     </div>
 
 
-                    <div className="lg:col-span-2 py-12 flex flex-col px-[10%]">
+                    <div className="lg:col-span-2 py-12 flex flex-col px-[10%] ">
                         <div className="flex flex-col items-center gap-6 mb-12">
                             <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold text-black/75 leading-[1.2] text-center">
                                 Nos Membres – La Nouvelle Force Politique
@@ -101,14 +102,14 @@ function Parti() {
                                     key={index}
                                     className="flex flex-col sm:flex-row items-start gap-6 border border-dashed p-6 rounded-lg"
                                 >
-                                    {/* Logo du parti */}
+
                                     <img
                                         src={party.partyLogo}
                                         alt={party.name}
                                         className="w-24 h-24 object-contain flex-shrink-0 mx-auto sm:mx-0"
                                     />
 
-                                    {/* Texte */}
+
                                     <div className="flex flex-col gap-2 text-center sm:text-left text-[.8rem] md:text-[1.3rem] font-heading font-bold">
                                         <h3
                                             className="font-extrabold"
@@ -134,7 +135,7 @@ function Parti() {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
 

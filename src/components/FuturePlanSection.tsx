@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { MdLocationOn, MdDateRange } from 'react-icons/md';
 
 interface EventCardProps {
     image: string;
@@ -7,6 +8,8 @@ interface EventCardProps {
     description: string;
     link: string;
     variant?: "blue" | "yellow" | "dark";
+    location?: string;
+    date?: string;
 }
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -15,6 +18,8 @@ const EventCard: React.FC<EventCardProps> = ({
     description,
     link,
     variant = "blue",
+    location,
+    date
 }) => {
     const getVariantClasses = () => {
         switch (variant) {
@@ -31,7 +36,7 @@ const EventCard: React.FC<EventCardProps> = ({
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
-            className="overflow-hidden shadow rounded-lg flex flex-col bg-white min-w-[300px] md:min-w-[369px] mx-4 h-full"
+            className="overflow-hidden shadow-lg rounded-lg flex flex-col bg-white min-w-[300px] md:min-w-[369px] mx-4 h-full"
         >
             <img
                 src={image}
@@ -39,26 +44,39 @@ const EventCard: React.FC<EventCardProps> = ({
                 className="w-full h-40 md:h-48 object-cover"
             />
 
-            <div
-                className={`p-6 flex flex-col justify-between flex-1 ${getVariantClasses()}`}
-            >
+            <div className={`p-6 flex flex-col justify-between flex-1 ${getVariantClasses()}`}>
                 <h3 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold mb-3">
                     {title}
                 </h3>
 
-                <p className="text-[.95rem] md:text-[1.1rem] mb-4 opacity-90 leading-relaxed flex-1">
+                <p className="leading-relaxed text-[.9rem] md:text-[1.07rem] text-black/70 flex-1">
                     {description}
                 </p>
 
+
+                <div className="flex items-center gap-6 mb-4 text-[.85rem] md:text-[1rem] text-gray-600">
+                    {location && (
+                        <div className="flex items-center gap-1">
+                            <MdLocationOn className="w-4 h-4 text-nfp-yellow" />
+                            <span>{location}</span>
+                        </div>
+                    )}
+                    {date && (
+                        <div className="flex items-center gap-1">
+                            <MdDateRange className="w-4 h-4 text-nfp-yellow" />
+                            <span>{date}</span>
+                        </div>
+                    )}
+                </div>
+
                 <a
                     href={link}
-                    className="text-[.95rem] md:text-[1.1rem] font-semibold uppercase tracking-wide underline text-nfp-blue mt-auto"
+                    className="text-[.95rem] md:text-[1.1rem] font-semibold uppercase tracking-wide underline text-nfp-yellow mt-auto"
                 >
                     Voir Détails
                 </a>
             </div>
         </motion.div>
-
     );
 };
 
@@ -67,34 +85,60 @@ const EventsSection: React.FC = () => {
     const [cardWidth, setCardWidth] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const events = [
+    const events: EventCardProps[] = [
         {
             image: "/plan/gouvernement.png",
-            title: "Grand Rassemblement de la Jeunesse NFP ",
-            description: "Un événement majeur pour mobiliser la jeunesse autour des valeurs progressistes de la NFP. Débats, ateliers et tables rondes sur l'avenir de notre nation.",
+            title: "Grand Rassemblement de la Jeunesse NFP",
+            description: "Un événement majeur pour mobiliser la jeunesse autour des valeurs progressistes de la NFP.",
             link: "#",
-            variant: "blue"
+            variant: "blue",
+            location: "Paris",
+            date: "12 Septembre 2025"
         },
         {
             image: "/plan/etudiant.png",
             title: "Forum Économique pour une France Prospère",
-            description: "Experts, entrepreneurs et citoyens débattent des solutions économiques innovantes portées par la NFP pour relancer l'économie nationale.",
+            description: "Experts, entrepreneurs et citoyens débattent des solutions économiques innovantes.",
             link: "#",
-            variant: "yellow"
+            variant: "yellow",
+            location: "Lyon",
+            date: "18 Septembre 2025"
         },
         {
             image: "/plan/pme.png",
             title: "Convention Nationale sur la Transition Écologique",
-            description: "La NFP présente son plan ambitieux pour une transition écologique juste et créatrice d'emplois dans tous les territoires.",
+            description: "La NFP présente son plan ambitieux pour une transition écologique juste et créatrice d'emplois.",
             link: "#",
-            variant: "blue"
+            variant: "blue",
+            location: "Marseille",
+            date: "25 Septembre 2025"
         },
         {
             image: "/ecoute.png",
             title: "Rencontres Territoriales : La NFP à l'Écoute des Citoyens",
-            description: "Une tournée nationale pour recueillir la parole des Français et construire ensemble le programme de transformation sociale de la NFP.",
+            description: "Une tournée nationale pour recueillir la parole des Français et construire ensemble le programme de transformation sociale.",
             link: "#",
-            variant: "dark"
+            variant: "dark",
+            location: "Toulouse",
+            date: "30 Septembre 2025"
+        },
+        {
+            image: "/plan/economique.png",
+            title: "Rencontres Territoriales : La NFP à l'Écoute des Citoyens",
+            description: "Une tournée nationale pour recueillir la parole des Français et construire ensemble le programme de transformation sociale.",
+            link: "#",
+            variant: "dark",
+            location: "Toulouse",
+            date: "30 Septembre 2025"
+        },
+        {
+            image: "/plan/formation.png",
+            title: "Rencontres Territoriales : La NFP à l'Écoute des Citoyens",
+            description: "Une tournée nationale pour recueillir la parole des Français et construire ensemble le programme de transformation sociale.",
+            link: "#",
+            variant: "dark",
+            location: "Toulouse",
+            date: "30 Septembre 2025"
         }
     ];
 
@@ -115,7 +159,6 @@ const EventsSection: React.FC = () => {
 
         updateCardWidth();
         window.addEventListener('resize', updateCardWidth);
-
         return () => window.removeEventListener('resize', updateCardWidth);
     }, []);
 
@@ -123,14 +166,10 @@ const EventsSection: React.FC = () => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => {
                 const nextIndex = prevIndex + 1;
-
                 if (nextIndex >= events.length) {
-                    setTimeout(() => {
-                        setCurrentIndex(0);
-                    }, 50);
+                    setTimeout(() => setCurrentIndex(0), 50);
                     return nextIndex;
                 }
-
                 return nextIndex;
             });
         }, 4000);
@@ -139,19 +178,12 @@ const EventsSection: React.FC = () => {
     }, [events.length]);
 
     return (
-        <section className="relative text-white px-[10%]">
-            <div className="absolute top-0 left-0 w-full h-[500px]">
-                <img
-                    src="/celebration.png"
-                    alt="Background"
-                    className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-nfp-blue/70" />
-            </div>
+        <section className="relative text-white px-[10%] bg-[url('/integral.png')] bg-cover bg-center bg-fixed border-none">
+            <div className="absolute inset-0 bg-black/40" />
 
             <div className="relative z-10 pt-12 text-center">
                 <div className='flex justify-center'>
-                    <div className="w-[6rem] h-1 bg-nfp-yellow mb-2 item-center"></div>
+                    <div className="w-[6rem] h-1 bg-nfp-yellow mb-2"></div>
                 </div>
                 <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold leading-[1.2] mb-4">
                     Agenda des Événements NFP
@@ -163,7 +195,7 @@ const EventsSection: React.FC = () => {
                 </p>
             </div>
 
-            <div className="relative z-20  mt-16 overflow-hidden" ref={containerRef}>
+            <div className="relative z-20 mt-16 overflow-hidden" ref={containerRef}>
                 <motion.div
                     className="flex"
                     animate={{ x: -currentIndex * cardWidth }}
@@ -171,16 +203,17 @@ const EventsSection: React.FC = () => {
                 >
                     {duplicatedEvents.map((event, index) => (
                         <div key={index} className="event-card">
-                            <EventCard
-                                image={event.image}
-                                title={event.title}
-                                description={event.description}
-                                link={event.link}
-                                variant={event.variant as "blue" | "yellow" | "dark"}
-                            />
+                            <EventCard {...event} />
                         </div>
                     ))}
                 </motion.div>
+                <div className='flex justify-center mt-12'>
+                    <button className="bg-secondary text-white px-6 py-3.5 hover:bg-nfp-blue/90 transition-colors">
+                        En savoir plus
+                    </button>
+
+                    <div></div>
+                </div>
             </div>
 
             <div className="pb-20" />

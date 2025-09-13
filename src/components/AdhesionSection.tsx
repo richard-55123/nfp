@@ -67,11 +67,8 @@ const AdhesionSection: React.FC = () => {
                         Engagez-vous dès maintenant et faites partie de notre mouvement pour un futur plus juste et progressiste.
                         Votre voix compte et vos actions feront la différence.
                     </p>
-                    <button
-
-                        className="border border-nfp-blue text-nfp-blue px-6 py-3.5 hover:bg-nfp-blue/5 transition-colors text-underligne"
-                    >
-                        Rejoindre maintenant
+                    <button className="bg-secondary text-white px-6 py-3.5 hover:bg-nfp-blue/90 transition-colors">
+                        Rejoindre le mouvement
                     </button>
                 </motion.div>
             </div>

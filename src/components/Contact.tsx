@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { HiMail, HiPhone, HiPaperAirplane, HiClock, HiLocationMarker } from 'react-icons/hi'
 
-const Contact = () => {
+const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,16 +21,13 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulation d'envoi réussi
     setIsSubmitted(true)
-    // Réinitialiser après 3 secondes
     setTimeout(() => {
       setIsSubmitted(false)
       setFormData({ name: '', email: '', subject: '', message: '' })
     }, 3000)
   }
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -73,7 +70,7 @@ const Contact = () => {
         />
       </div> */}
 
-      <div className="container mx-auto lg:px-[10%] relative z-10">
+      <div className="container mx-auto px-[10%] relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -278,4 +275,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default ContactSection

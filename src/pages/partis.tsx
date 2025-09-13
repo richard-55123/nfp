@@ -4,8 +4,7 @@ import Parties from "../components/Parties";
 function Parti() {
     return (
         <section>
-            {/* Bannière */}
-            <div className="px-[10%] py-6 flex flex-col justify-center relative h-[calc(100vh-133px)]">
+            {/* <div className="px-[10%] py-6 flex flex-col justify-center relative h-[calc(100vh-133px)]">
                 <img
                     src="/choix.jpg"
                     alt="Bannière du parti"
@@ -23,13 +22,39 @@ function Parti() {
                         inclusive.
                     </span>
                 </div>
+            </div> */}
+            <div className="relative h-[60vh] min-h-[500px] overflow-hidden px-[10%] flex flex-col  md:justify-center lg:md:justify-center justify-center">
+
+                <img
+                    src="/choix.jpg"
+                    alt="banniere_fnp"
+                    className="absolute w-full h-full z-[0] object-cover top-0 left-0"
+                />
+                <div className="absolute w-full h-full top-0 left-0 bg-black/70"></div>
+
+                {/* <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-secondary/70 via-secondary/40 to-secondary/10"></div> */}
+
+                {/* Contenu principal */}
+                <div className="relative flex flex-col gap-5 w-full md:w-[70%] lg:w-[60%] ">
+                    <h1 className="text-[1.8rem] sm:text-[2.2rem] md:text-[3.2rem] leading-[1.2] text-white font-extrabold drop-shadow-lg">
+                        Les Partis – Une vision pour demain
+                    </h1>
+                    <span className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-100 font-medium drop-shadow">
+                        Notre mission est de porter haut les aspirations de chacun, de bâtir
+                        une nation solidaire et tournée vers l’avenir. Ensemble, transformons
+                        nos idées en actions concrètes pour une société plus juste et plus
+                        inclusive.
+                    </span>
+                    
+                </div>
+
             </div>
 
             <section className="px-[10%] py-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
 
                 <div className="flex flex-col gap-5">
-                    <div className="w-[6rem] h-1 bg-nfp-yellow mb-2"></div>
+                    <div className="w-[6rem] h-1 bg-nfp-yellow"></div>
                     <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold text-black/75 leading-[1.2] mb-6">
                         Nous sommes des citoyens engagés
                         <br /> pour un avenir progressiste.
@@ -68,7 +93,7 @@ function Parti() {
                     />
                 </div>
             </section>
-            <Parties/>
+            <Parties />
 
 
             {/* <section className="pt-12 ">

@@ -3,14 +3,14 @@ import { useState } from "react";
 export const FuturePlans = () => {
     const plans = [
         {
-            title: "Des pas vers un meilleur avenir",
-            description: "Nous poserons les fondations d'une société juste, prospère et durable, en harmonie avec son environnement. Notre projet combine modernisation économique et progrès social, innovation technologique et préservation de nos patrimoines. Par une planification rigoureuse et une exécution déterminée, nous garantirons que chaque mesure contribue à construire l'avenir radieux que méritent nos concitoyens.",
-            image: "/meilleur.png",
-        },
-        {
             title: "Conduire la Nation vers l'avant",
             description: "Notre vision est de bâtir une nation unie où chaque citoyen trouve sa place et contribue à l'édification collective. Nous mettrons en œuvre des politiques inclusives qui valorisent la diversité tout en renforçant notre identité commune. Par des investissements stratégiques dans l'éducation, les infrastructures et l'innovation, nous créerons les conditions d'une prospérité partagée et durable pour les générations futures.",
             image: "/conduite.png",
+        },
+        {
+            title: "Des pas vers un meilleur avenir",
+            description: "Nous poserons les fondations d'une société juste, prospère et durable, en harmonie avec son environnement. Notre projet combine modernisation économique et progrès social, innovation technologique et préservation de nos patrimoines. Par une planification rigoureuse et une exécution déterminée, nous garantirons que chaque mesure contribue à construire l'avenir radieux que méritent nos concitoyens.",
+            image: "/meilleur.png",
         },
         {
             title: "Un plan audacieux pour un changement positif",

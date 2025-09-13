@@ -3,6 +3,7 @@ import { GrUserAdd } from "react-icons/gr"
 import { NavLink } from "react-router-dom"
 import { HiOutlineMenu, HiX } from "react-icons/hi"
 import { useState } from "react"
+import JoinModal from "./JoinModal"
 
 interface Lien {
       name: string
@@ -11,6 +12,7 @@ interface Lien {
 
 function Headers() {
       const [open, setOpen] = useState<boolean>(false)
+      const [isModalOpen, setIsModalOpen] = useState(false)
 
       const liens: Lien[] = [
             { name: "Accueil", href: "/" },
@@ -23,11 +25,14 @@ function Headers() {
 
       return (
             <>
-                  <div className="flex items-center border-t-[3px] border-primary relative bg-[#e5deda] px-[10%] pt-2 pb-8 justify-between">
+                  <div className="flex items-center border-t-[3px] border-primary relative bg-[#e5deda] px-[5%] pt-1 pb-3 md:px-[10%] md:pt-2 md:pb-8 justify-between">
                         <div>
-                              <img src="/NFP.png" className="h-[70px] md:h-[100px]" alt="logo_nfp" />
+                              <img
+                                    src="/NFP.png"
+                                    className="h-[50px] md:h-[100px]"
+                                    alt="logo_nfp"
+                              />
                         </div>
-
                         <div className="hidden md:flex gap-1.5 items-center">
                               <img src="/icon2.png" alt="#" />
                               <div className="flex flex-col gap-0.5">
@@ -50,13 +55,13 @@ function Headers() {
                                     ))}
                               </ul>
                               <div className="pr-1">
-                                    <NavLink
-                                          to="#"
+                                    <button
+                                          onClick={() => setIsModalOpen(true)}
                                           className="px-7 flex items-center gap-2 text-[.8rem] font-semibold bg-white py-3"
                                     >
                                           <GrUserAdd className="text-[1rem]" strokeWidth={3} /> Rejoindre le
                                           mouvement
-                                    </NavLink>
+                                    </button>
                               </div>
                         </div>
 
@@ -79,15 +84,17 @@ function Headers() {
                                           {x.name}
                                     </NavLink>
                               ))}
-                              <NavLink
-                                    to="#"
+                              <button
+                                    onClick={() => setIsModalOpen(true)}
                                     className="mt-3 inline-flex items-center gap-2 bg-white text-primary font-semibold px-5 py-2"
                               >
                                     <GrUserAdd className="text-[1rem]" strokeWidth={3} /> Rejoindre le
                                     mouvement
-                              </NavLink>
+                              </button>
                         </div>
                   )}
+
+                  <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </>
       )
 }

@@ -1,6 +1,5 @@
-// import React from "react"
 import { GrUserAdd } from "react-icons/gr"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { HiOutlineMenu, HiX } from "react-icons/hi"
 import { useState } from "react"
 import JoinModal from "./JoinModal"
@@ -27,11 +26,13 @@ function Headers() {
             <>
                   <div className="flex items-center border-t-[3px] border-primary relative bg-[#e5deda] px-[5%] pt-1 pb-3 md:px-[10%] md:pt-2 md:pb-8 justify-between">
                         <div>
-                              <img
-                                    src="/NFP.png"
-                                    className="h-[50px] md:h-[100px]"
-                                    alt="logo_nfp"
-                              />
+                              <Link to={'/'} >
+                                    <img
+                                          src="/NFP.png"
+                                          className="h-[50px] md:h-[100px]"
+                                          alt="logo_nfp"
+                                    />
+                              </Link>
                         </div>
                         <div className="hidden md:flex gap-1.5 items-center">
                               <img src="/icon2.png" alt="#" />

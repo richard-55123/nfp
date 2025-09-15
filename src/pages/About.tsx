@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { FiGlobe, FiUsers, FiTarget, FiHeart, FiFlag, FiBook, FiAward } from "react-icons/fi";
+import { FiUsers, FiTarget, FiHeart, FiFlag, FiBook } from "react-icons/fi";
 import Banner from "../components/Banner";
 import Testimonials from "../components/Testimonials";
 

@@ -111,14 +111,14 @@ const AboutNFP: FC = () => {
                     </div>
                 </div>
             </section>
-          <Testimonials/>
+            <Testimonials />
             <section className="relative bg-cover bg-center py-28 text-center text-white" style={{ backgroundImage: "url('/mission.png')" }}>
-                <div className="absolute inset-0 bg-nfp-blue/90"></div>
+                <div className="absolute inset-0 bg-nfp-blue/70"></div>
                 <div className="container relative">
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+                    <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold mb-6">
                         Ensemble, bâtissons le Cameroun de 2030
                     </h2>
-                    <p className="text-xl mb-10 max-w-2xl mx-auto">
+                    <p className="leading-relaxed text-[.9rem] md:text-[1.07rem] mb-10 max-w-2xl mx-auto">
                         Rejoignez les milliers de Camerounais qui ont déjà choisi d'écrire une nouvelle page de notre histoire commune
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

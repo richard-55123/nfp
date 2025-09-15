@@ -7,6 +7,8 @@ import { parties } from '../data/parties'
 import AdhesionSection from '../components/AdhesionSection'
 import ContactSection from '../components/Contact'
 import { Link } from 'react-router-dom'
+import { FuturePlans } from '../components/vision'
+import Testimonials from '../components/Testimonials'
 // import FaqSection from '../components/FaqSection'
 // import Activities from '../components/Activities'
 
@@ -85,11 +87,13 @@ function Index() {
           </div>
         </div>
       </section>
-
       <FuturePlanSection />
+      <FuturePlans />
       <AdhesionSection />
       {/* <FaqSection/> */}
       {/* <Activities /> */}
+      <Testimonials />
+
       <ContactSection />
     </>
   )

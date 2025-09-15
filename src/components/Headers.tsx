@@ -16,10 +16,10 @@ function Headers() {
 
       const liens: Lien[] = [
             { name: "Accueil", href: "/" },
-            { name: "Parti", href: "/partis" },
+            { name: "Qui sommes-nous ?", href: "/about" },
+            { name: "Partis membres", href: "/partis" },
             { name: "Évènements", href: "/evenements" },
-            { name: "Adhésion", href: "/Adhésion" },
-            { name: "Documents", href: "/Documents" },
+            // { name: "Documents", href: "/Documents" },
             { name: "Contact", href: "/contact" },
       ]
 

@@ -31,13 +31,13 @@ export const FuturePlans = () => {
 
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const nextPlan = () => {
-        setActiveIndex((prevIndex) => (prevIndex + 1) % plans.length);
-    };
+    // const nextPlan = () => {
+    //     setActiveIndex((prevIndex) => (prevIndex + 1) % plans.length);
+    // };
 
-    const prevPlan = () => {
-        setActiveIndex((prevIndex) => (prevIndex - 1 + plans.length) % plans.length);
-    };
+    // const prevPlan = () => {
+    //     setActiveIndex((prevIndex) => (prevIndex - 1 + plans.length) % plans.length);
+    // };
 
     return (
         <div className="py-16 flex flex-col lg:flex-row gap-12 bg-gradient-to-br from-nfp-blue/5 via-white to-nfp-yellow/5 px-[10%] relative overflow-hidden">
@@ -70,10 +70,10 @@ export const FuturePlans = () => {
 
                                 {activeIndex === index && (
                                     <div className="ml-auto flex items-center">
-                                        <span className="text-nfp-yellow mr-2 text-sm font-semibold">Actif</span>
-                                        <svg className="w-5 h-5 text-nfp-yellow animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                                        {/* <span className="text-nfp-yellow mr-2 text-sm font-semibold">Actif</span> */}
+                                        {/* <svg className="w-5 h-5 text-nfp-yellow animate-pulse" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                        </svg>
+                                        </svg> */}
                                     </div>
                                 )}
                             </div>
@@ -97,7 +97,7 @@ export const FuturePlans = () => {
                         className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 
-                    <button
+                    {/* <button
                         onClick={prevPlan}
                         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-nfp-blue/80 hover:bg-nfp-blue text-white p-3 rounded-full transition-all duration-300 z-20 shadow-lg"
                         aria-label="Plan précédent"
@@ -114,11 +114,11 @@ export const FuturePlans = () => {
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                    </button>
+                    </button> */}
 
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-nfp-blue/80 text-white px-3 py-1 rounded-full text-sm font-semibold z-20">
+                    {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-nfp-blue/80 text-white px-3 py-1 rounded-full text-sm font-semibold z-20">
                         {activeIndex + 1} / {plans.length}
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="mt-8 p-6 bg-white shadow-lg border-t-4 border-nfp-yellow rounded-lg">

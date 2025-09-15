@@ -1,3 +1,4 @@
+import Banner from "../components/Banner"
 import EvenementList from "../components/EventList"
 
 function Evenment() {
@@ -5,32 +6,11 @@ function Evenment() {
 
     return (
         <>
-            <div className="relative h-[60vh] min-h-[500px] overflow-hidden px-[10%] flex flex-col  md:justify-center lg:md:justify-center justify-center">
-
-                <img
-                    src="/integral.png"
-                    alt="banniere_fnp"
-                    className="absolute w-full h-full z-[0] object-cover top-0 left-0"
-                />
-                <div className="absolute w-full h-full top-0 left-0 bg-secondary/20"></div>
-
-                {/* <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-secondary/70 via-secondary/40 to-secondary/10"></div> */}
-
-                {/* Contenu principal */}
-                <div className="relative flex flex-col gap-5 w-full md:w-[70%] lg:w-[60%] ">
-                    <h1 className="text-[1.8rem] sm:text-[2.2rem] md:text-[3.2rem] leading-[1.2] text-white font-extrabold drop-shadow-lg animate-fadeInUp">
-                        Les Partis – Une vision pour demain
-                    </h1>
-                    <span className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-white font-medium drop-shadow animate-fadeInUp">
-                        Notre mission est de porter haut les aspirations de chacun, de bâtir
-                        une nation solidaire et tournée vers l’avenir. Ensemble, transformons
-                        nos idées en actions concrètes pour une société plus juste et plus
-                        inclusive.
-                    </span>
-                   
-                </div>
-
-            </div>
+            <Banner title={"Nouvelle Force Politique – Construire l’avenir ensemble"} subtitle="Nous portons la voix de chaque citoyen pour bâtir une société plus
+                        équitable, respectueuse de l’environnement et tournée vers l’avenir.
+                        Ensemble, faisons naître une France plus juste et solidaire." bgImage={"/integral.png"} 
+                        overlayColor="absolute w-full h-full top-0 left-0 bg-secondary/20"
+                        />
             <EvenementList />
 
             <style>{`

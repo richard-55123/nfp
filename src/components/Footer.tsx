@@ -13,6 +13,7 @@ import {
     FaLinkedinIn,
 } from 'react-icons/fa'
 import { parties } from '../data/parties'
+import { Link } from 'react-router-dom'
 
 interface MenuItem {
     name: string;
@@ -284,14 +285,14 @@ const Footer = () => {
                                 </div> */}
                             </div>
 
-                            <p className="leading-relaxed text-[.9rem] md:text-[1.07rem]  mb-6 max-w-md">
+                            <p className="leading-relaxed text-[.9rem]   mb-6 max-w-md">
                                 Le Nouvelle Forces Politiques est une coalition engagée pour
                                 le progrès et le développement national. Rejoignez-nous dans
                                 notre mission pour un avenir meilleur.
                             </p>
 
-                            
-                            
+
+
                             {/* Social Media Links */}
                             <div className="flex space-x-4 mt-auto">
                                 {[
@@ -365,7 +366,7 @@ const Footer = () => {
                                 >
                                     <div className="flex items-center p-3 bg-gray-800 hover:bg-gray-700 transition-colors shadow-md">
                                         <div className="flex-shrink-0 mr-3">
-                                            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1 shadow-md">
+                                            <div className="w-12 h-12 flex items-center justify-center p-1 shadow-md">
                                                 <img
                                                     src={party.partyLogo}
                                                     alt={party.name}
@@ -385,14 +386,16 @@ const Footer = () => {
                                 </motion.a>
                             ))}
                             {parties.length > 3 && (
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="text-nfp-yellow text-sm font-medium mt-2 flex items-center"
-                                >
-                                    Voir tous les partis
-                                    <HiChevronUp className="ml-1 transform rotate-90" />
-                                </motion.button>
+                                <Link to={'/partis'}>
+                                    <motion.button
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="text-nfp-yellow text-sm font-medium mt-2 flex items-center"
+                                    >
+                                        Voir tous les partis
+                                        <HiChevronUp className="ml-1 transform rotate-90" />
+                                    </motion.button>
+                                </Link>
                             )}
                         </div>
                     </motion.div>

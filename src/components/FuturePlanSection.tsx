@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { MdLocationOn, MdDateRange } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 interface EventCardProps {
     image: string;
@@ -208,10 +209,11 @@ const EventsSection: React.FC = () => {
                     ))}
                 </motion.div>
                 <div className='flex justify-center mt-12'>
-                    <button className="bg-secondary text-white px-6 py-3.5 hover:bg-nfp-blue/90 transition-colors">
-                        En savoir plus
-                    </button>
-
+                    <Link to={'/evenements'}>
+                        <button className="bg-secondary text-white px-6 py-3.5 hover:bg-nfp-blue/90 transition-colors">
+                            En savoir plus
+                        </button>
+                    </Link>
                     <div></div>
                 </div>
             </div>

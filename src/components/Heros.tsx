@@ -1,6 +1,6 @@
 function Heros() {
   return (
-    <div className="px-[5%] sm:px-[10%] py-4 sm:py-6 flex flex-col justify-center relative h-[50vh] sm:h-[70vh] md:h-[calc(100vh-133px)]">
+    <div className="px-[10%] sm:px-[10%] py-4 sm:py-6 flex flex-col justify-center relative h-[50vh] sm:h-[70vh] md:h-[calc(100vh-133px)]">
         <img
           src="/images/ban2.jpg"
           alt="banniere_fnp"

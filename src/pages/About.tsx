@@ -1,9 +1,11 @@
-import type { FC } from "react";
+import { useState, type FC } from "react";
 import { FiUsers, FiTarget, FiHeart, FiFlag, FiBook } from "react-icons/fi";
 import Banner from "../components/Banner";
 import Testimonials from "../components/Testimonials";
+import JoinModal from "../components/JoinModal";
 
 const AboutNFP: FC = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     return (
         <div className="bg-nfp-white text-nfp-black font-sans">
             <Banner title={"Nouvelle Force Politique"} subtitle="Une vision renouvelée pour le Cameroun de demain. Engagés depuis 2025 pour transformer notre pays." bgImage={"/images/ban3.jpg"} />
@@ -122,15 +124,16 @@ const AboutNFP: FC = () => {
                         Rejoignez les milliers de Camerounais qui ont déjà choisi d'écrire une nouvelle page de notre histoire commune
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-nfp-yellow hover:bg-amber-500 text-nfp-blue font-heading font-bold px-8 py-4 rounded-lg shadow-bold transition-all transform hover:scale-105">
-                            Nous rejoindre
+                        <button onClick={() => setIsModalOpen(true)} className="bg-secondary text-white px-6 py-3.5 hover:bg-nfp-blue/90 transition-colors">
+                            Rejoindre le mouvement
                         </button>
-                        <button className="bg-transparent border-2 border-white hover:bg-white/20 text-white font-heading font-bold px-8 py-4 rounded-lg transition-all">
+                        <button className="bg-transparent border-2 border-white hover:bg-white/20 text-white font-heading font-bold px-8 py-4  transition-all">
                             Faire un don
                         </button>
                     </div>
                 </div>
             </section>
+            <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
     );
 };

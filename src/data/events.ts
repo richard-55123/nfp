@@ -1,4 +1,3 @@
-
 interface EventCardProps {
     image: string;
     title: string;
@@ -17,7 +16,7 @@ export const events: EventCardProps[] = [
       "La jeunesse au cœur du changement : ateliers, débats et propositions pour donner une voix forte aux nouvelles générations.",
     link: "#",
     variant: "blue",
-    location: "Paris",
+    location: "Yaoundé",
     date: "12 Septembre 2025",
   },
   {
@@ -27,7 +26,7 @@ export const events: EventCardProps[] = [
       "Un espace de dialogue entre économistes, étudiants et entrepreneurs pour repenser notre modèle économique et préparer l’avenir.",
     link: "#",
     variant: "yellow",
-    location: "Lyon",
+    location: "Douala",
     date: "18 Septembre 2025",
   },
   {
@@ -37,7 +36,7 @@ export const events: EventCardProps[] = [
       "Présentation d’un plan ambitieux pour concilier écologie, justice sociale et création d’emplois durables dans tous les territoires.",
     link: "#",
     variant: "blue",
-    location: "Marseille",
+    location: "Garoua",
     date: "25 Septembre 2025",
   },
   {
@@ -47,7 +46,7 @@ export const events: EventCardProps[] = [
       "Une tournée nationale pour écouter les citoyens, recueillir leurs propositions et bâtir ensemble un projet de transformation sociale.",
     link: "#",
     variant: "dark",
-    location: "Toulouse",
+    location: "Bafoussam",
     date: "30 Septembre 2025",
   },
   {
@@ -57,7 +56,7 @@ export const events: EventCardProps[] = [
       "Un rendez-vous stratégique pour soutenir les petites et moyennes entreprises, encourager l’innovation et défendre la souveraineté économique.",
     link: "#",
     variant: "yellow",
-    location: "Bordeaux",
+    location: "Maroua",
     date: "5 Octobre 2025",
   },
   {
@@ -67,7 +66,7 @@ export const events: EventCardProps[] = [
       "Réflexions collectives avec enseignants, étudiants et acteurs économiques pour moderniser la formation et garantir l’accès à l’emploi pour tous.",
     link: "#",
     variant: "blue",
-    location: "Lille",
+    location: "Bertoua",
     date: "10 Octobre 2025",
   },
 ];

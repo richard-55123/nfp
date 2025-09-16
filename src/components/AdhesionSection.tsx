@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import JoinModal from './JoinModal';
+
+
 
 const AdhesionSection: React.FC = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
     return (
         <section className="relative py-12 px-[10%]">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -45,11 +50,12 @@ const AdhesionSection: React.FC = () => {
                         Engagez-vous dès maintenant et faites partie de notre mouvement pour un futur plus juste et progressiste.
                         Votre voix compte et vos actions feront la différence.
                     </p>
-                    <button className="bg-secondary text-white px-6 py-3.5 hover:bg-nfp-blue/90 transition-colors">
+                    <button onClick={() => setIsModalOpen(true)} className="bg-secondary text-white px-6 py-3.5 hover:bg-nfp-blue/90 transition-colors">
                         Rejoindre le mouvement
                     </button>
                 </div>
             </div>
+            <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };

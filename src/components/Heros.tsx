@@ -1,11 +1,11 @@
 function Heros() {
   return (
     <div className="px-[10%] sm:px-[10%] py-4 sm:py-6 flex flex-col justify-center relative h-[50vh] sm:h-[70vh] md:h-[calc(100vh-133px)]">
-        <img
-          src="/images/ban2.jpg"
-          alt="banniere_fnp"
-          className="absolute w-full h-full z-[0] object-cover top-0 left-0"
-        />
+      <img
+        src="/images/ban2.jpg"
+        alt="banniere_fnp"
+        className="absolute w-full h-full z-[0] object-cover top-0 left-0"
+      />
       <div className="absolute w-full h-full top-0 left-0 bg-secondary/10"></div>
 
       <div className="relative flex flex-col gap-3 sm:gap-5 w-full md:w-[70%] lg:w-[60%]">

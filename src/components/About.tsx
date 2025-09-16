@@ -75,26 +75,25 @@ const About = () => {
   // }
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
-
     <section id="about" className="py-12 md:py-20 px-[10%] relative overflow-hidden">
-      {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center"
-      >
-        <div className='flex flex-col gap-4'>
-          <motion.div
-            initial={{ scale: 0.9 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className=""
-          >
-            <div className="w-[6rem] h-1 bg-nfp-yellow mb-2"></div>
-            <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold text-black/75 leading-[1.2]">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center"
+        >
+          <div className='flex flex-col gap-4'>
+            <motion.div
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className=""
+            >
+              <div className="w-[6rem] h-1 bg-nfp-yellow mb-2"></div>
+              <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold text-black/75 leading-[1.2]">
               Qui sommes-nous ?
             </h2>
           </motion.div>
@@ -127,20 +126,20 @@ const About = () => {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <div className="relative w-full overflow-hidden rounded-[7px] bg-nfp-blue/10">
-            <img
-              src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-              alt="Rassemblement politique de la Nouvelle Force Politique"
-              className="top-0 left-0 w-full h-full object-cover object-right"
-            />
-            {/* <motion.span
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative w-full overflow-hidden rounded-[7px] bg-nfp-blue/10">
+              <img
+                src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Rassemblement politique de la Nouvelle Force Politique"
+                className="top-0 left-0 w-full h-full object-cover object-right"
+              />
+                {/* <motion.span
                   className="absolute inset-0 bg-gradient-to-t from-nfp-blue/70 to-transparent text-nfp-yellow font-heading font-bold text-lg md:text-xl"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -149,9 +148,9 @@ const About = () => {
                 >
                   Ensemble pour la renaissance camerounaise
                 </motion.span> */}
-          </div>
+            </div>
 
-          {/* <motion.div
+            {/* <motion.div
               className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-32 h-32 md:w-40 md:h-40 bg-nfp-yellow z-10"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -162,8 +161,8 @@ const About = () => {
                 Nouvelle Ère Politique
               </div>
             </motion.div> */}
+          </motion.div>
         </motion.div>
-      </motion.div>
 
       <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>

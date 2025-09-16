@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom"
 import { HiOutlineMenu, HiX } from "react-icons/hi"
 import { useState } from "react"
 import JoinModal from "./JoinModal"
+import { BiMenu } from "react-icons/bi"
 
 interface Lien {
       name: string
@@ -36,10 +37,14 @@ function Headers() {
                         </div>
                         <div className="hidden md:flex gap-1.5 items-center">
                               <img src="/icon2.png" alt="#" />
+
                               <div className="flex flex-col gap-0.5">
                                     <h6 className="text-[.85rem] text-gray-500 font-bold">Support 24h/24</h6>
                                     <span className="text-[1.1rem] font-bold">+237 673 712 522</span>
                               </div>
+                        </div>
+                        <div className='flex md:hidden text-[2rem] text-primary justify-center align-items-center p-1'>
+                              <BiMenu />
                         </div>
 
                         <div className="hidden lg:flex bg-primary z-[1] justify-between items-center absolute w-[80%] -bottom-6">

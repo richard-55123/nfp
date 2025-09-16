@@ -72,7 +72,7 @@ const About = () => {
   // }
 
   return (
-    <section id="about" className="py-12 md:py-20 px-[10%] relative overflow-hidden">
+    <section id="about" className="py-12 md:py-20 px-[6%] md:px-[10%] relative overflow-hidden">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -81,7 +81,7 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center"
         >
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col gap-4 max-md:order-2'>
             <motion.div
               initial={{ scale: 0.9 }}
               whileInView={{ scale: 1 }}
@@ -126,7 +126,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative max-md:order-1"
           >
             <div className="relative w-full overflow-hidden rounded-[7px] bg-nfp-blue/10">
               <img
@@ -144,18 +144,6 @@ const About = () => {
                   Ensemble pour la renaissance camerounaise
                 </motion.span> */}
             </div>
-
-            {/* <motion.div
-              className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-32 h-32 md:w-40 md:h-40 bg-nfp-yellow z-10"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="h-full bg-nfp-blue/90 text-white flex items-center justify-center p-3 md:p-4 text-center font-heading font-bold text-sm md:text-base">
-                Nouvelle Ère Politique
-              </div>
-            </motion.div> */}
           </motion.div>
         </motion.div>
 

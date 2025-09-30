@@ -111,7 +111,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="text-[.8rem] md:text-[1.3rem] font-heading font-bold text-black/70 mb-1">Courrier Électronique</h4>
                   <p className="leading-relaxed text-[.9rem] md:text-[1.07rem] text-black/70 mb-2">Pour les échanges détaillés et collaborations</p>
-                  <p className="text-nfp-blue font-medium text-[.9rem] md:text-[1.07rem] text-black/70 ">info@nfp-pnf.org</p>
+                  <p className="text-nfp-blue font-medium text-[.9rem] md:text-[1.07rem] text-black/70 ">info@nfp-npf.cm</p>
                 </div>
               </motion.div>
 

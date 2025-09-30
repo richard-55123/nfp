@@ -123,7 +123,7 @@ const Footer = () => {
                                 <p>Nouvelles Forces Politiques (NFP)<br />
                                     Siège Social : BP 8361 Deido, Douala, Cameroun<br />
                                     Téléphone : +237 673 712 522<br />
-                                    Email : info@nfp-pnf.org</p>
+                                    Email : info@nfp-npf.cm</p>
 
 
                                 <h4 className="text-xl font-semibold text-nfp-blue mt-6 mb-3">Constructeur :</h4>

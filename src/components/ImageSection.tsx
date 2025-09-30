@@ -8,8 +8,8 @@ interface ImageSectionProps {
 
 const ImageSection: React.FC<ImageSectionProps> = ({ src, alt = "Image", caption }) => {
   return (
-    <section className="w-full py-16 bg-nfp.white flex flex-col items-center justify-center">
-      <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl shadow-soft">
+    <section className="w-full py-16 bg-nfp.white ">
+      <div className="relative w-full max-w-4xl  ">
         <img
           src={src}
           alt={alt}

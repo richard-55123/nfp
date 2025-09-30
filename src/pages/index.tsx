@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import { FuturePlans } from '../components/vision'
 import Testimonials from '../components/Testimonials'
 import PresentationSection from '../components/PresentationSection'
+// import ImageSection from '../components/ImageSection'
 // import FaqSection from '../components/FaqSection'
 // import Activities from '../components/Activities'
 
@@ -92,6 +93,7 @@ function Index() {
       <FuturePlans />
       <FuturePlanSection />
       <AdhesionSection />
+      {/* <ImageSection src={'/images/3.jpg'}/> */}
       {/* <FaqSection/> */}
       {/* <Activities /> */}
       <Testimonials />

@@ -125,7 +125,7 @@ const EventsSection: React.FC = () => {
     }, [events.length]);
 
     return (
-        <section className="relative text-white px-[10%] bg-[url('/integral.png')] bg-cover bg-center bg-fixed border-none">
+        <section className="relative text-white px-[10%] bg-[url('/images/integral.png')] bg-cover bg-center bg-fixed border-none">
             <div className="absolute inset-0 bg-black/40" />
 
             <div className="relative z-10 pt-12 text-center">

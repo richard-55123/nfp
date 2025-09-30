@@ -442,7 +442,7 @@ const Footer = () => {
                                     <HiMail className="text-nfp-yellow text-sm" />
                                 </div>
                                 <span className="text-gray-300 text-sm">
-                                    info@nfp-pnf.org
+                                    info@nfp-npf.cm
                                 </span>
                             </motion.div>
                         </div>

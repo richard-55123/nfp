@@ -5,27 +5,27 @@ export const FuturePlans = () => {
         {
             title: "Conduire la Nation vers l'avant",
             description: "Notre vision est de bâtir une nation unie où chaque citoyen trouve sa place et contribue à l'édification collective. Nous mettrons en œuvre des politiques inclusives qui valorisent la diversité tout en renforçant notre identité commune. Par des investissements stratégiques dans l'éducation, les infrastructures et l'innovation, nous créerons les conditions d'une prospérité partagée et durable pour les générations futures.",
-            image: "/conduite.png",
+            image: "/images/5.jpg",
         },
         {
             title: "Des pas vers un meilleur avenir",
             description: "Nous poserons les fondations d'une société juste, prospère et durable, en harmonie avec son environnement. Notre projet combine modernisation économique et progrès social, innovation technologique et préservation de nos patrimoines. Par une planification rigoureuse et une exécution déterminée, nous garantirons que chaque mesure contribue à construire l'avenir radieux que méritent nos concitoyens.",
-            image: "/meilleur.png",
+            image: "/images/5.jpg",
         },
         {
             title: "Un plan audacieux pour un changement positif",
             description: "Notre programme transformateur convertira les défis structurels en opportunités de croissance et de modernisation. Nous instaurerons une gouvernance transparente et participative, redonnant ainsi confiance aux citoyens en leurs institutions. Des réformes économiques courageuses stimuleront l'entrepreneuriat et l'emploi, tandis que notre politique sociale protégera les plus vulnérables et garantira l'égalité des chances pour tous.",
-            image: "/pans.png",
+            image: "/images/5.jpg",
         },
         {
             title: "Relever les défis de front",
             description: "Nous aborderons avec détermination et lucidité les défis complexes de notre temps : transition écologique, souveraineté numérique, justice sociale et sécurité nationale. Notre approche sera résolument pragmatique, fondée sur l'écoute permanente des territoires et des citoyens. Chaque décision sera expliquée, chaque action évaluée, dans un souci constant de redevabilité et d'efficacité au service de l'intérêt général.",
-            image: "/assemble.png",
+            image: "/images/5.jpg",
         },
         {
             title: "Transformer les promesses en progrès",
             description: "Notre engagement se traduira par un plan d'action concret et mesurable, avec des objectifs clairs et des échéances précises. Nous mettrons en place un système de suivi transparent permettant à chaque citoyen de vérifier l'avancement de nos réformes. Des indicateurs de performance régulièrement publiés attesteront de la réalisation effective de nos engagements et de leur impact positif sur la qualité de vie de la population.",
-            image: "/progres.png",
+            image: "/images/5.jpg",
         },
     ];
 

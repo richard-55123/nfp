@@ -8,7 +8,7 @@ function Evenment() {
         <>
             <Banner title={"Nouvelle Force Politique – Construire l’avenir ensemble"} subtitle="Nous portons la voix de chaque citoyen pour bâtir une société plus
                         équitable, respectueuse de l’environnement et tournée vers l’avenir.
-                        Ensemble, faisons naître une France plus juste et solidaire." bgImage={"/integral.png"} 
+                        Ensemble, faisons naître une France plus juste et solidaire." bgImage={"/images/integral.png"} 
                         overlayColor="absolute w-full h-full top-0 left-0 bg-secondary/20"
                         />
             <EvenementList />

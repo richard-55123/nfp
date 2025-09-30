@@ -9,7 +9,7 @@ function Contact() {
             <div className="relative h-[60vh] min-h-[500px] overflow-hidden">
 
                 <img
-                    src="/contact.png"
+                    src="/images/contact.png"
                     alt="banniere_fnp"
                     className="absolute w-full h-full z-[0] object-cover top-0 left-0"
                 />

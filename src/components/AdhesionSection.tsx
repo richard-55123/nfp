@@ -24,7 +24,7 @@ const AdhesionSection: React.FC = () => {
                 <div className="order-1 md:order-2 relative">
                     <div className="relative overflow-hidden rounded-lg hover:scale-105 transition-transform duration-500">
                         <img
-                            src="/adhesion.png"
+                            src="/images/4.jpg"
                             alt="Rejoindre la NFP"
                             className="w-full object-cover"
                         />
@@ -35,7 +35,7 @@ const AdhesionSection: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center mt-12">
                 <div className="relative overflow-hidden hover:scale-105 transition-transform duration-500">
                     <img
-                        src="/vous.png"
+                        src="/images/6.jpg"
                         alt="Rejoindre la NFP"
                         className="w-full object-cover rounded-lg"
                     />

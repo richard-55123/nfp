@@ -135,7 +135,7 @@ const About = () => {
         >
           <div className="relative w-full overflow-hidden rounded-[7px] bg-nfp-blue/10">
             <img
-              src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              src="/images/2.jpg"
               alt="Rassemblement politique de la Nouvelle Force Politique"
               className="top-0 left-0 w-full h-full object-cover object-right"
             />

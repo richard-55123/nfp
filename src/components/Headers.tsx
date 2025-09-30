@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom"
 import { HiOutlineMenu, HiX } from "react-icons/hi"
 import { useState } from "react"
 import JoinModal from "./JoinModal"
-import { BiMenu } from "react-icons/bi"
 
 interface Lien {
       name: string
@@ -43,9 +42,7 @@ function Headers() {
                                     <span className="text-[1.1rem] font-bold">+237 673 712 522</span>
                               </div>
                         </div>
-                        <div className='flex md:hidden text-[2rem] text-primary justify-center align-items-center p-1'>
-                              <BiMenu />
-                        </div>
+                        
 
                         <div className="hidden lg:flex bg-primary z-[1] justify-between items-center absolute w-[80%] -bottom-6">
                               <ul className="flex link-nfp items-center text-white/80 font-light text-[.85rem]">

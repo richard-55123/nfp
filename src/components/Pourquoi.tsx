@@ -35,7 +35,7 @@ function Pourquoi() {
       ]
       return (
             <div className='px-[6%] md:px-[10%] py-12 md:py-14 relative'>
-                  <img src='/images/prkw.webp' alt='' className='absolute top-0 left-0 w-full h-full object-cover' />
+                  <img src='/images/4.jpg' alt='' className='absolute top-0 left-0 w-full h-full object-cover' />
                   <div className='absolute bg-black/60 w-full h-full left-0 top-0' />
                   <div className="relative flex flex-col gap-8">
                         <h2 className="text-white/90 leading-[1.2] text-[1.5rem] md:text-[2.1rem] text-center font-bold">Nos valeurs fondamentales</h2>

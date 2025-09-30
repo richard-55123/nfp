@@ -36,7 +36,7 @@ const FaqSection: React.FC = () => {
             <div className="mx-auto flex flex-col md:flex-row gap-12">
                 <div className="md:w-2/5 text-left">
                     <img
-                        src="/rassemblement.png"
+                        src="/images/3.jpg"
                         alt="Questions fréquentes - Nouvelle Force Politique"
                         className="w-full h-full object-cover"
                     />

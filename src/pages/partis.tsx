@@ -11,8 +11,8 @@ function Parti() {
                         une nation solidaire et tournée vers l’avenir. Ensemble, transformons
                         nos idées en actions concrètes pour une société plus juste et plus
                         inclusive."
-                bgImage={"/choix.jpg"}
-                overlayColor="bg-black/70"
+                bgImage={"/images/4.jpg"}
+                overlayColor="absolute w-full h-full top-0 left-0 bg-black/60"
             />
 
             <section className="px-[10%] py-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -51,7 +51,7 @@ function Parti() {
 
                 <div className="w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg">
                     <img
-                        src="/possible.png"
+                        src="/images/3.jpg"
                         alt="progressive"
                         className="w-full h-full object-cover"
                     />

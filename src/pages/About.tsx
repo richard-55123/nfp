@@ -3,12 +3,13 @@ import { FiUsers, FiTarget, FiHeart, FiFlag, FiBook } from "react-icons/fi";
 import Banner from "../components/Banner";
 import Testimonials from "../components/Testimonials";
 import JoinModal from "../components/JoinModal";
+import PresentationSection from "../components/PresentationSection";
 
 const AboutNFP: FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     return (
         <div className="bg-nfp-white text-nfp-black font-sans">
-            <Banner title={"Nouvelle Force Politique"} subtitle="Une vision renouvelée pour le Cameroun de demain. Engagés depuis 2025 pour transformer notre pays." bgImage={"/images/ban3.jpg"} />
+            <Banner title={"Nouvelle Force Politique"} subtitle="Une vision renouvelée pour le Cameroun de demain. Engagés depuis 2025 pour transformer notre pays." bgImage={"/images/2.jpg"} />
             {/* <section className="py-12 bg-white px-[10%]">
                 <div className="">
                     <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold text-black/75 leading-[1.2]  mb-2">
@@ -67,7 +68,7 @@ const AboutNFP: FC = () => {
 
                         <div className="relative">
                             <img
-                                src="/about.png"
+                                src="/images/12.jpg"
                                 alt="Histoire de la NFP"
                                 className="rounded-3xl shadow-soft object-cover w-full h-[400px]"
                             />
@@ -79,8 +80,7 @@ const AboutNFP: FC = () => {
                     </div>
                 </div>
             </section>
-
-
+            <PresentationSection/>
             <section className="bg-nfp-blue text-white py-20">
                 <div className="text-center">
                     <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold mb-4">Nos Valeurs Fondamentales</h2>
@@ -114,7 +114,7 @@ const AboutNFP: FC = () => {
                 </div>
             </section>
             <Testimonials />
-            <section className="relative bg-cover bg-center py-28 text-center text-white" style={{ backgroundImage: "url('/mission.png')" }}>
+            <section className="relative bg-cover bg-center py-28 text-center text-white" style={{ backgroundImage: "url('/images/6.jpg')" }}>
                 <div className="absolute inset-0 bg-nfp-blue/70"></div>
                 <div className="container relative">
                     <h2 className="text-[1.8rem] md:text-[3.1rem] font-heading font-bold mb-6">

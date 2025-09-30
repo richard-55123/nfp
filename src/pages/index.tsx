@@ -9,6 +9,7 @@ import ContactSection from '../components/Contact'
 import { Link } from 'react-router-dom'
 import { FuturePlans } from '../components/vision'
 import Testimonials from '../components/Testimonials'
+import PresentationSection from '../components/PresentationSection'
 // import FaqSection from '../components/FaqSection'
 // import Activities from '../components/Activities'
 
@@ -23,7 +24,7 @@ function Index() {
 
           <div className="hidden lg:flex items-center justify-center border-gray-300 h-full">
             <img
-              src="/progres.png"
+              src="/images/11.jpg"
               alt="Espace Publicitaire"
               className="object-cover w-full h-full "
             />
@@ -87,13 +88,13 @@ function Index() {
           </div>
         </div>
       </section>
-      <FuturePlanSection />
+      <PresentationSection />
       <FuturePlans />
+      <FuturePlanSection />
       <AdhesionSection />
       {/* <FaqSection/> */}
       {/* <Activities /> */}
       <Testimonials />
-
       <ContactSection />
     </>
   )
